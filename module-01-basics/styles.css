@@ -1,38 +1,52 @@
-/* Styles for the header section */
-.header {
-  background-color: #333;
-  color: white;
+/* ==========================================================================
+   DAY 3 STUDY LOG: CSS SYNTAX & SELECTORS
+   ========================================================================== */
+
+/* ANATOMY OF A CSS RULE:
+   Selector (e.g., body) {
+       Property: Value; <--- Declaration
+   }
+*/
+
+body {
+  /* Font-family stack with fallback options */
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  background-color: #f9f9f9;
+  color: #333333;
+  margin: 0;
   padding: 20px;
 }
 
-/* Styles for the navigation menu */
-.nav {
-  display: flex;
-  justify-content: space-between;
-  padding: 10px;
+/* GROUPED SELECTORS (h1, h2)
+   Applying the same primary color to both heading levels efficiently to stay DRY 
+*/
+h1, h2 {
+  color: #2c3e50;
 }
 
-.nav li {
-  list-style: none;
-  margin-right: 15px;
+/* Class Selector targeting the subtitle paragraph */
+.subtitle {
+  font-style: italic;
+  color: #7f8c8d;
+  margin-top: -5px;
 }
 
-/* Styles specifically for the links inside the nav */
-.nav a {
-  color: inherit;
-  text-decoration: none;
+/* Class Selector targeting the main container block */
+.content-box {
+  background-color: #ffffff;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
 }
 
-/* Styles for the main content */
-.main-content {
-  font-size: 16px;
-  line-height: 1.5;
-  padding: 20px;
-}
-
-/* Styles for the footer section */
-.footer {
-  background-color: #f4f4f4;
-  padding: 15px;
+/* DEBUGGING EXAMPLE:
+   The rule below is temporarily disabled using comments for testing purposes.
+*/
+/*
+footer {
   text-align: center;
+  margin-top: 40px;
+  opacity: 0.5;
 }
+*/

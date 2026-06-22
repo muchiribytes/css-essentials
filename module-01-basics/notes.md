@@ -14,3 +14,11 @@
   - Compared architecture strategies for managing styles: a single global CSS file, separate section-specific CSS files, or a hybrid approach that balances consistency with modularity.
   - Analyzed a clean multi-page project directory structure that isolates global asset folders (`/css`, `/images`, `/js`, `/fonts`) while keeping nested page sections (like `/about`, `/contact`) modular and self-contained.
 - **Key Takeaway:** Proper file architecture from day one prevents a codebase from turning into chaotic clutter, making the project infinitely easier to scale, maintain, and navigate.
+
+### 🗓 Day 3: June 21, 2026
+- **Topics:** CSS Syntax (Rules, Selectors, Combinations) & CSS Comments
+- **Log:** 
+  - Broke down the fundamental anatomy of a CSS rule: **Selector** (targets HTML), **Property** (aspect to style), and **Value** (the specific setting), separated by colons and closed with semicolons inside a declaration block `{}`.
+  - Learned to group multiple selectors using commas (e.g., `h1, p`) to apply identical styles efficiently, reducing code duplication and keeping stylesheets DRY (Don't Repeat Yourself).
+  - Practiced using multi-value fallbacks (like font-family stacks) and implemented CSS comments (`/* comment */`) for code documentation and temporarily disabling rules during debugging.
+- **Key Takeaway:** Clean syntax and grouping selectors keeps stylesheets highly efficient and scalable, while meaningful comments prevent an expanding codebase from becoming unreadable.

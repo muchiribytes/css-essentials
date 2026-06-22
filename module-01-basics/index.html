@@ -3,26 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSS Basics - CSS Syntax & Comments</title>
+    <title>Day 4: CSS Selectors</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <header>
-        <h1>Day 3: CSS Syntax & CSS Comments</h1>
-        <p class="subtitle">Mastering rules, grouped selectors, and comments.</p>
+    <header id="main-header">
+        <h1>Day 4: Targeting Elements with Selectors</h1>
+        <p class="tagline">Moving beyond basic tags to advanced layout relationships.</p>
     </header>
 
-    <main class="content-box">
-        <h2>Core Concepts Covered</h2>
-        <p>Today was all about understanding how CSS rules target HTML elements and how to write clean, DRY code.</p>
-        
-        <h2>Why Grouping Matters</h2>
-        <p>By grouping selectors together, we can apply shared styles all at once instead of rewriting the same declarations over and over.</p>
+    <main>
+        <section class="card-container">
+            <h2>Selector Breakdown</h2>
+            <p>This is a <strong>direct child</strong> paragraph of the card container.</p>
+            
+            <div class="nested-box">
+                <p>This paragraph is a <strong>descendant</strong> of the container, but not a direct child.</p>
+            </div>
+        </section>
+
+        <section class="download-zone">
+            <h2>Resource Downloads</h2>
+            <p>Notice how the icons automatically change based on the file extension prefix/suffix!</p>
+            
+            <a href="https://example.com/secure-guide" class="btn">Secure Link (https)</a>
+            <a href="manual.pdf" class="btn">Download Manual (PDF)</a>
+            <a href="image-archive.zip" class="btn">Download Archive (ZIP)</a>
+        </section>
     </main>
 
     <footer>
-        <p>CSS Study Log &copy; 2026</p>
+        <p>CSS Selectors Log &copy; 2026</p>
     </footer>
 
 </body>

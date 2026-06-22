@@ -1,52 +1,94 @@
 /* ==========================================================================
-   DAY 3 STUDY LOG: CSS SYNTAX & SELECTORS
+   DAY 4 LOG: TARGETING HTML ELEMENTS WITH SELECTORS
    ========================================================================== */
 
-/* ANATOMY OF A CSS RULE:
-   Selector (e.g., body) {
-       Property: Value; <--- Declaration
-   }
-*/
-
+/* 1. ELEMENT SELECTOR (Broadest scope) */
 body {
-  /* Font-family stack with fallback options */
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: Arial, sans-serif;
   line-height: 1.6;
-  background-color: #f9f9f9;
-  color: #333333;
+  background-color: #f4f6f9;
+  color: #333;
   margin: 0;
-  padding: 20px;
+  padding: 40px 20px;
 }
 
-/* GROUPED SELECTORS (h1, h2)
-   Applying the same primary color to both heading levels efficiently to stay DRY 
-*/
-h1, h2 {
-  color: #2c3e50;
-}
-
-/* Class Selector targeting the subtitle paragraph */
-.subtitle {
-  font-style: italic;
-  color: #7f8c8d;
-  margin-top: -5px;
-}
-
-/* Class Selector targeting the main container block */
-.content-box {
-  background-color: #ffffff;
-  padding: 25px;
+/* 2. ID SELECTOR (Unique, denoted by #) */
+#main-header {
+  background: #2c3e50;
+  color: white;
+  padding: 30px;
   border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  text-align: center;
 }
 
-/* DEBUGGING EXAMPLE:
-   The rule below is temporarily disabled using comments for testing purposes.
-*/
-/*
-footer {
-  text-align: center;
-  margin-top: 40px;
-  opacity: 0.5;
+/* 3. CLASS SELECTOR (Reusable, denoted by .) */
+.tagline {
+  color: #1abc9c;
+  font-size: 1.2rem;
+  font-weight: bold;
 }
-*/
+
+.card-container {
+  background: white;
+  margin: 20px 0;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+/* 4. COMBINATORS */
+/* Child Combinator (>): Styles ONLY paragraphs directly inside .card-container */
+.card-container > p {
+  color: #e74c3c;
+}
+
+/* Descendant Combinator (space): Styles any paragraph inside .card-container, no matter how deep */
+.card-container p {
+  font-style: italic;
+}
+
+
+/* 5. ATTRIBUTE SELECTORS */
+.btn {
+  display: inline-block;
+  padding: 10px 15px;
+  margin: 5px;
+  background-color: #bdc3c7;
+  color: #333;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+/* Prefix Match (^=): Targets links whose href starts with "https" */
+a[href^="https"] {
+  background-color: #27ae60;
+  color: white;
+}
+
+/* Suffix Match ($=): Targets links whose href ends with ".pdf" */
+a[href$=".pdf"] {
+  background-color: #e67e22;
+  color: white;
+}
+
+/* Suffix Match ($=): Targets links whose href ends with ".zip" */
+a[href$=".zip"] {
+  background-color: #9b59b6;
+  color: white;
+}
+
+
+/* 6. PSEUDO-CLASSES & PSEUDO-ELEMENTS */
+/* Pseudo-class (:hover): Modifies state when user mouses over elements */
+.btn:hover {
+  opacity: 0.85;
+  transform: translateY(-1px);
+}
+
+/* Pseudo-element (::before): Injects decorative structural content before the text */
+a[href$=".pdf"]::before {
+  content: "📄 ";
+}
+
+a[href$=".zip"]::before {
+  content: "📦 ";
+}

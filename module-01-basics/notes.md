@@ -22,3 +22,12 @@
   - Learned to group multiple selectors using commas (e.g., `h1, p`) to apply identical styles efficiently, reducing code duplication and keeping stylesheets DRY (Don't Repeat Yourself).
   - Practiced using multi-value fallbacks (like font-family stacks) and implemented CSS comments (`/* comment */`) for code documentation and temporarily disabling rules during debugging.
 - **Key Takeaway:** Clean syntax and grouping selectors keeps stylesheets highly efficient and scalable, while meaningful comments prevent an expanding codebase from becoming unreadable.
+
+### 🗓 Day 4: June 22, 2026
+- **Topics:** Targeting HTML Elements with Selectors
+- **Log:** 
+  - Explored the core CSS selectors used to target HTML elements precisely based on tags, attributes, or page relationships.
+  - Reviewed the primary selector types: **Element** (broadest, targets all tags), **Class** (reusable, denoted by `.`), and **ID** (unique to a single element, denoted by `#`).
+  - Learned **Attribute Selectors** to style elements based on presence or specific value matches (`[attr]`, exact `[attr="val"]`, prefix `^=`, suffix `$=`, substring `*=`), bypassing the need for extra class names.
+  - Introduced advanced selectors: **Pseudo-classes** for states (`:hover`), **Pseudo-elements** for structural parts (`::before`), and **Combinators** for layout relationships (descendant ` `, direct child `>`).
+- **Key Takeaway:** Classes are the workhorse for scalable styling, IDs should be reserved for unique functionality, and attribute/advanced selectors provide surgical precision without cluttering HTML markup.

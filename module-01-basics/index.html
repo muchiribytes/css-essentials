@@ -3,34 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Day 5: The CSS Cascade & Specificity Lab</title>
+    <title>Simple Web Page Blog</title>
     <link rel="stylesheet" href="styles.css">
+
+    <style>
+        p {
+            color: slategray;
+            font-size: 16px;
+        }
+    </style>
 </head>
 <body>
 
-    <main class="parent-container">
-        
-        <header>
-            <h1>Day 5: The Cascade</h1>
-            <p>This text inherits its font family and color effortlessly from the parent wrapper.</p>
-        </header>
+    <header id="main-header">
+        <h1 style="color: blue; font-size: 24px;">Welcome to My Personal Blog</h1>
+    </header>
 
-        <section class="card-box">
-            <h2>Specificity Hierarchy Battle</h2>
-            
-            <p id="champion-text" class="highlight-text">
-                What color will this text turn? (ID vs. Class vs. Tag Element)
+    <main>
+        <section>
+            <h2>Latest Updates</h2>
+            <p style="color: gray;">
+                This is the first paragraph of my blog post. <span class="highlight">This text is highlighted!</span> 
+                Feel free to look around and explore the content.
             </p>
         </section>
 
-        <section class="override-zone">
-            <h2>The Break-Glass Scenario</h2>
-            <p class="force-override" style="color: purple;">
-                Even with an inline purple style attribute, the stylesheet will overpower it!
+        <section>
+            <h2>Contact Me</h2>
+            <p>
+                If you have any questions, feel free to reach out to me directly via 
+                <a href="mailto:hello@example.com">hello@example.com</a>.
             </p>
         </section>
-
     </main>
+
+    <footer>
+        <p>&copy; 2026 My Personal Blog. All rights reserved.</p>
+    </footer>
 
 </body>
 </html>

@@ -1,68 +1,88 @@
-/* ==========================================================================
-   DAY 5 LOG: THE CSS CASCADE, SPECIFICITY, & INHERITANCE
-   ========================================================================== */
+/* ==========================================
+   Base Styles
+   ========================================== */
+/* 3. & 4. Sets body font and size */
+body {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
 
-/* --------------------------------------------------------------------------
-   1. INHERITANCE DEMONSTRATION
-   -------------------------------------------------------------------------- */
-.parent-container {
-  /* Typographic properties are naturally inherited by child tags (h1, h2, p) */
-  font-family: 'Courier New', Courier, monospace;
-  color: #2c3e50;
-  
-  /* Layout properties are NOT inherited (children won't get this border/padding) */
-  border: 3px solid #34495e;
-  padding: 30px;
-  max-width: 600px;
-  margin: 40px auto;
+/* ==========================================
+   Header Styles
+   ========================================== */
+/* 4. Layout and background for the header */
+header {
+    background-color: #333333;
+    padding: 20px;
+    text-align: center;
+}
+
+/* 5. ID Selector */
+#main-header {
+    border-bottom: 3px solid #ff9900;
+}
+
+/* ==========================================
+   Section Styles
+   ========================================== */
+/* 4. Margin spacing for sections */
+section {
+    margin: 20px;
+}
+
+/* 5. Element Selector */
+h2 {
+    color: black;
+}
+
+/* 5. Class Selector */
+.highlight {
+    background-color: orange;
+    color: white;
+    padding: 4px;
+}
+
+/* 5. Attribute Selector (Targets links starting with mailto:) */
+a[href^="mailto:"] {
+    color: orange;
+}
+
+/* 5. Pseudo-class Selector (Hover effect) */
+a:hover {
+    color: white;
+}
+
+/* 5. Pseudo-element Selector */
+p::first-line {
+    font-weight: bold;
+}
+
+/* 5. Combinator Selector (Adjacent sibling: main immediately following header) */
+header + main {
+    border-top: 2px solid #555555;
+}
+
+/* ==========================================
+   Footer Styles
+   ========================================== */
+/* 4. Layout and background for the footer */
+footer {
+    background-color: #333333;
+    padding: 10px;
+    text-align: center;
 }
 
 
-/* --------------------------------------------------------------------------
-   2. SPECIFICITY BATTLE
-   All three rules below target the exact same paragraph element, 
-   but the highest specific score wins, regardless of order.
-   -------------------------------------------------------------------------- */
+/* ==========================================
+   6. Cascade and Specificity Demonstration
+   ========================================== */
 
-/* Score: 0-0-1 (Lowest: Just an element tag) */
+/* This overrides the inline blue style because of !important */
+h1 {
+    color: green !important;
+}
+
+/* This external style is beaten out by both the internal style and the inline style */
 p {
-  color: red;
-  font-size: 16px;
-}
-
-/* Score: 0-1-0 (Medium: A class selector overrides tag element rules) */
-.highlight-text {
-  color: blue;
-  font-weight: bold;
-}
-
-/* Score: 1-0-0 (Highest: An ID selector completely dominates elements & classes) */
-#champion-text {
-  color: #27ae60; /* This turns green! */
-}
-
-
-/* --------------------------------------------------------------------------
-   3. THE CASCADE (ORDER OF DECLARATION)
-   When two rules have the exact same specificity score, the latest one wins.
-   -------------------------------------------------------------------------- */
-.card-box {
-  background-color: #f1f2f6; /* Ignored */
-  padding: 15px;
-}
-
-.card-box {
-  background-color: #dfe4ea; /* Wins! Overwrites the rule right above it */
-  margin-top: 20px;
-}
-
-
-/* --------------------------------------------------------------------------
-   4. THE !IMPORTANT "TRUMP CARD"
-   -------------------------------------------------------------------------- */
-.force-override {
-  /* Normally, inline HTML styles override external stylesheets. 
-     The !important tag forcefully breaks the cascade hierarchy to win. */
-  color: #e67e22 !important; /* Forces orange color over the inline purple */
-  font-size: 1.1rem;
+    color: red;
 }

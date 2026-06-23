@@ -1,94 +1,68 @@
 /* ==========================================================================
-   DAY 4 LOG: TARGETING HTML ELEMENTS WITH SELECTORS
+   DAY 5 LOG: THE CSS CASCADE, SPECIFICITY, & INHERITANCE
    ========================================================================== */
 
-/* 1. ELEMENT SELECTOR (Broadest scope) */
-body {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
-  background-color: #f4f6f9;
-  color: #333;
-  margin: 0;
-  padding: 40px 20px;
-}
-
-/* 2. ID SELECTOR (Unique, denoted by #) */
-#main-header {
-  background: #2c3e50;
-  color: white;
+/* --------------------------------------------------------------------------
+   1. INHERITANCE DEMONSTRATION
+   -------------------------------------------------------------------------- */
+.parent-container {
+  /* Typographic properties are naturally inherited by child tags (h1, h2, p) */
+  font-family: 'Courier New', Courier, monospace;
+  color: #2c3e50;
+  
+  /* Layout properties are NOT inherited (children won't get this border/padding) */
+  border: 3px solid #34495e;
   padding: 30px;
-  border-radius: 8px;
-  text-align: center;
+  max-width: 600px;
+  margin: 40px auto;
 }
 
-/* 3. CLASS SELECTOR (Reusable, denoted by .) */
-.tagline {
-  color: #1abc9c;
-  font-size: 1.2rem;
+
+/* --------------------------------------------------------------------------
+   2. SPECIFICITY BATTLE
+   All three rules below target the exact same paragraph element, 
+   but the highest specific score wins, regardless of order.
+   -------------------------------------------------------------------------- */
+
+/* Score: 0-0-1 (Lowest: Just an element tag) */
+p {
+  color: red;
+  font-size: 16px;
+}
+
+/* Score: 0-1-0 (Medium: A class selector overrides tag element rules) */
+.highlight-text {
+  color: blue;
   font-weight: bold;
 }
 
-.card-container {
-  background: white;
-  margin: 20px 0;
-  padding: 20px;
-  border-radius: 8px;
-}
-
-/* 4. COMBINATORS */
-/* Child Combinator (>): Styles ONLY paragraphs directly inside .card-container */
-.card-container > p {
-  color: #e74c3c;
-}
-
-/* Descendant Combinator (space): Styles any paragraph inside .card-container, no matter how deep */
-.card-container p {
-  font-style: italic;
+/* Score: 1-0-0 (Highest: An ID selector completely dominates elements & classes) */
+#champion-text {
+  color: #27ae60; /* This turns green! */
 }
 
 
-/* 5. ATTRIBUTE SELECTORS */
-.btn {
-  display: inline-block;
-  padding: 10px 15px;
-  margin: 5px;
-  background-color: #bdc3c7;
-  color: #333;
-  text-decoration: none;
-  border-radius: 4px;
+/* --------------------------------------------------------------------------
+   3. THE CASCADE (ORDER OF DECLARATION)
+   When two rules have the exact same specificity score, the latest one wins.
+   -------------------------------------------------------------------------- */
+.card-box {
+  background-color: #f1f2f6; /* Ignored */
+  padding: 15px;
 }
 
-/* Prefix Match (^=): Targets links whose href starts with "https" */
-a[href^="https"] {
-  background-color: #27ae60;
-  color: white;
-}
-
-/* Suffix Match ($=): Targets links whose href ends with ".pdf" */
-a[href$=".pdf"] {
-  background-color: #e67e22;
-  color: white;
-}
-
-/* Suffix Match ($=): Targets links whose href ends with ".zip" */
-a[href$=".zip"] {
-  background-color: #9b59b6;
-  color: white;
+.card-box {
+  background-color: #dfe4ea; /* Wins! Overwrites the rule right above it */
+  margin-top: 20px;
 }
 
 
-/* 6. PSEUDO-CLASSES & PSEUDO-ELEMENTS */
-/* Pseudo-class (:hover): Modifies state when user mouses over elements */
-.btn:hover {
-  opacity: 0.85;
-  transform: translateY(-1px);
-}
-
-/* Pseudo-element (::before): Injects decorative structural content before the text */
-a[href$=".pdf"]::before {
-  content: "📄 ";
-}
-
-a[href$=".zip"]::before {
-  content: "📦 ";
+/* --------------------------------------------------------------------------
+   4. THE !IMPORTANT "TRUMP CARD"
+   -------------------------------------------------------------------------- */
+.force-override {
+  /* Normally, inline HTML styles override external stylesheets. 
+     The !important tag forcefully breaks the cascade hierarchy to win. */
+  color: #e67e22 !important; /* Forces orange color over the inline purple */
+  font-size: 1.1rem;
 }

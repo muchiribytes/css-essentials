@@ -31,3 +31,17 @@
   - Learned **Attribute Selectors** to style elements based on presence or specific value matches (`[attr]`, exact `[attr="val"]`, prefix `^=`, suffix `$=`, substring `*=`), bypassing the need for extra class names.
   - Introduced advanced selectors: **Pseudo-classes** for states (`:hover`), **Pseudo-elements** for structural parts (`::before`), and **Combinators** for layout relationships (descendant ` `, direct child `>`).
 - **Key Takeaway:** Classes are the workhorse for scalable styling, IDs should be reserved for unique functionality, and attribute/advanced selectors provide surgical precision without cluttering HTML markup.
+
+### 🗓 Day 5: June 23, 2026
+- **Topics:** The CSS Cascade, Specificity, Inheritance & Module 1 Completion
+- **Log:** 
+  - Explored the **CSS Cascade**, the browser's engine for resolving style conflicts based on origin, declaration order, and specificity.
+  - Learned how **Specificity** acts as a matching score where IDs outrank classes, and classes outrank basic element selectors.
+  - Studied **Inheritance**, noting that text/typographic properties (like `font-family`) pass down to child elements automatically, while layout properties (like `border` and `padding`) stay contained.
+  - Examined the `!important` declaration—a structural "trump card" used to force overrides on third-party dependencies or default browser styling, while recognizing that overusing it destroys stylesheet maintainability.
+- **Key Takeaway:** Writing clean CSS means leaning into the natural flow of inheritance and creating a predictable specificity hierarchy instead of constantly fighting the cascade with quick fixes.
+
+---
+
+### 🎉 Module 1 Complete! 
+*Successfully logged all fundamental workflows, directory architectures, selector targeting types, and rule precedence engines for CSS.*

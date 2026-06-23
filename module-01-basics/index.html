@@ -3,39 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Day 4: CSS Selectors</title>
+    <title>Day 5: The CSS Cascade & Specificity Lab</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <header id="main-header">
-        <h1>Day 4: Targeting Elements with Selectors</h1>
-        <p class="tagline">Moving beyond basic tags to advanced layout relationships.</p>
-    </header>
+    <main class="parent-container">
+        
+        <header>
+            <h1>Day 5: The Cascade</h1>
+            <p>This text inherits its font family and color effortlessly from the parent wrapper.</p>
+        </header>
 
-    <main>
-        <section class="card-container">
-            <h2>Selector Breakdown</h2>
-            <p>This is a <strong>direct child</strong> paragraph of the card container.</p>
+        <section class="card-box">
+            <h2>Specificity Hierarchy Battle</h2>
             
-            <div class="nested-box">
-                <p>This paragraph is a <strong>descendant</strong> of the container, but not a direct child.</p>
-            </div>
+            <p id="champion-text" class="highlight-text">
+                What color will this text turn? (ID vs. Class vs. Tag Element)
+            </p>
         </section>
 
-        <section class="download-zone">
-            <h2>Resource Downloads</h2>
-            <p>Notice how the icons automatically change based on the file extension prefix/suffix!</p>
-            
-            <a href="https://example.com/secure-guide" class="btn">Secure Link (https)</a>
-            <a href="manual.pdf" class="btn">Download Manual (PDF)</a>
-            <a href="image-archive.zip" class="btn">Download Archive (ZIP)</a>
+        <section class="override-zone">
+            <h2>The Break-Glass Scenario</h2>
+            <p class="force-override" style="color: purple;">
+                Even with an inline purple style attribute, the stylesheet will overpower it!
+            </p>
         </section>
+
     </main>
-
-    <footer>
-        <p>CSS Selectors Log &copy; 2026</p>
-    </footer>
 
 </body>
 </html>

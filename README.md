@@ -11,4 +11,4 @@ A dedicated workspace for mastering CSS, tracking daily progression through core
 - [x] **Day 4:** Module 1: Targeting HTML Elements with Selectors
 - [x] **Day 5:** Module 1: The CSS Cascade, Specificity, and Inheritance & Module 1 Completion
 - [x] **Day 6:** Module 2: Colors and Color Models & Color-Related Properties
-- [ ] **Day 7:** Weekly Review & Catch-up Day
+- [x] **Day 7:** Weekly Review & Catch-up Day

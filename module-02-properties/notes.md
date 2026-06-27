@@ -15,3 +15,12 @@
   - **Portfolio Application:** Applied Module 1 and Module 2 principles to the independent personal portfolio landing page repository.
   - **Review Scope:** Verified design system integration using custom properties for the brand color palette (deep blue, mustard gold, and light gray-white) and tested alpha-transparent `box-shadow` values on UI components.
 - **Key Takeaway:** Building weekly ensures that abstract concepts like specificity overrides and color models transition immediately from theory into scalable, real-world project architecture.
+
+### 🗓 Day 8: June 28, 2026
+- **Topics:** Background Properties, Gradient Functions, Shorthand vs. Longhand Properties
+- **Log:** 
+  - **Background Control:** Mastered `background-image` alongside positioning modifiers: `background-repeat` (`repeat`, `x/y`, `no-repeat`) and `background-size` (comparing `cover` to crop/fill vs `contain` to preserve ratio).
+  - **Visual Dynamics:** Discovered `background-blend-mode: overlay` to blend base colors with background images, and `background-attachment: fixed` to create stationary background scrolling effects.
+  - **CSS Gradients:** Practiced writing color functions directly inside `background-image`: `linear-gradient(to bottom, #ff9900, #ffcc00)` and `radial-gradient(circle, #ff9900, #ffcc00)`.
+  - **Shorthand Optimization:** Compared verbose longhand rules against single-line shorthand declarations. Mastered the background shorthand syntax matrix: `background: [image] [position] / [size] [repeat] [color]`.
+- **Key Takeaway:** Gradients are treated as images by the browser. When writing background shorthand properties, the background size *must* explicitly follow the position, separated by a forward slash (e.g., `top right / cover`).

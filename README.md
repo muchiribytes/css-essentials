@@ -12,3 +12,12 @@ A dedicated workspace for mastering CSS, tracking daily progression through core
 - [x] **Day 5:** Module 1: The CSS Cascade, Specificity, and Inheritance & Module 1 Completion
 - [x] **Day 6:** Module 2: Colors and Color Models & Color-Related Properties
 - [x] **Day 7:** Weekly Review & Catch-up Day
+
+### 📦 Week 2: Properties, Values & The Box Model Basics
+- [x] **Day 8:** Module 2: Background Properties and Gradient Functions & Shorthand and Longhand CSS Properties
+- [ ] **Day 9:** Module 2: CSS Text Styling Properties & List Properties
+- [ ] **Day 10:** Module 2: Hyperlink Properties, Image Properties, & Module 2 Completion
+- [ ] **Day 11:** Module 3: Introduction to the Box Model & Box Model Essentials
+- [ ] **Day 12:** Module 3: Adding Backgrounds to Box Elements
+- [ ] **Day 13:** Module 3: Controlling Content Layout & Controlling Element Visibility
+- [ ] **Day 14:** Weekly Review & Catch-up Day

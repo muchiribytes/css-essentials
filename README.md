@@ -15,7 +15,7 @@ A dedicated workspace for mastering CSS, tracking daily progression through core
 
 ### 📦 Week 2: Properties, Values & The Box Model Basics
 - [x] **Day 8:** Module 2: Background Properties and Gradient Functions & Shorthand and Longhand CSS Properties
-- [ ] **Day 9:** Module 2: CSS Text Styling Properties & List Properties
+- [x] **Day 9:** Module 2: CSS Text Styling Properties & List Properties
 - [ ] **Day 10:** Module 2: Hyperlink Properties, Image Properties, & Module 2 Completion
 - [ ] **Day 11:** Module 3: Introduction to the Box Model & Box Model Essentials
 - [ ] **Day 12:** Module 3: Adding Backgrounds to Box Elements

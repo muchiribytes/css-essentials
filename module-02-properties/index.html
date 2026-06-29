@@ -3,32 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Day 8: Backgrounds & Gradients</title>
+    <title>Day 9: Text Typography & List Properties Lab</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <header class="hero-section">
-        <div class="hero-content">
-            <h1>Day 8: Advanced Backgrounds</h1>
-            <p>Mastering linear gradients, positioning, and the background shorthand matrix.</p>
-        </div>
-    </header>
+    <main class="typography-lab">
+        <header class="lab-header">
+            <h1 class="main-title">Fireflies</h1>
+            <p class="subtitle">Module 2: Typography & List Architecture</p>
+        </header>
 
-    <main class="content-area">
-        <section class="card">
-            <h2>Radial Gradient Block</h2>
-            <div class="gradient-display radial-box"></div>
+        <section class="card text-properties-zone">
+            <h2>2.5.2 & 2.5.3 Text & Font Modifiers</h2>
+            <p class="sample-paragraph web-safe-serif">
+                This block implements a <strong>Georgia, serif</strong> font stack. It tests relative sizing metrics alongside standard line-height ratios. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+
+            <p class="sample-paragraph uppercase-spaced">
+                this text is completely transformed using text-transform and letter spacing options.
+            </p>
+
+            <p class="sample-paragraph text-decorations">
+                This text showcases an overline decoration scheme.
+            </p>
         </section>
 
-        <section class="card">
-            <h2>Shorthand Key Takeaway</h2>
-            <p>
-                Remember: Gradients are technically treated as <strong>images</strong> by the browser. 
-                When writing the strict background shorthand, the size <em>must</em> hide behind a 
-                forward slash right after the position!
-            </p>
-            <code>background: url() center / cover no-repeat;</code>
+        <section class="card list-properties-zone">
+            <h2>2.6 List Marker Configurations</h2>
+
+            <div class="list-container">
+                <h3>Unordered List (Inside Position / Circle Type)</h3>
+                <ul class="custom-bullet-list">
+                    <li>Apples</li>
+                    <li>Bananas</li>
+                    <li>Cherries</li>
+                </ul>
+            </div>
+
+            <div class="list-container">
+                <h3>Ordered List (Outside Position / Lower-Alpha Type)</h3>
+                <ol class="custom-number-list">
+                    <li>First Step</li>
+                    <li>Second Step</li>
+                    <li>Third Step</li>
+                </ol>
+            </div>
+
+            <div class="list-container">
+                <h3>Spaced List Box Layout (Cleaned Paddings + Borders)</h3>
+                <ul class="spaced-list">
+                    <li><strong>Item 1:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. This long block relies on a 1.6 line-height ratio to preserve baseline structural clarity.</li>
+                    <li><strong>Item 2:</strong> Quisque vitae est at massa vulputate pharetra non eget lorem. Notice the outer margins isolating individual blocks safely.</li>
+                    <li><strong>Item 3:</strong> Integer aliquam, eros eget rutrum porta, tortor erat tempus quam. Built using desaturated gray blocks for visual isolation.</li>
+                </ul>
+            </div>
         </section>
     </main>
 

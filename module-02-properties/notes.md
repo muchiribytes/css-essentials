@@ -24,3 +24,14 @@
   - **CSS Gradients:** Practiced writing color functions directly inside `background-image`: `linear-gradient(to bottom, #ff9900, #ffcc00)` and `radial-gradient(circle, #ff9900, #ffcc00)`.
   - **Shorthand Optimization:** Compared verbose longhand rules against single-line shorthand declarations. Mastered the background shorthand syntax matrix: `background: [image] [position] / [size] [repeat] [color]`.
 - **Key Takeaway:** Gradients are treated as images by the browser. When writing background shorthand properties, the background size *must* explicitly follow the position, separated by a forward slash (e.g., `top right / cover`).
+
+### 🗓 Day 9: June 29, 2026
+- **Topics:** CSS Text Styling Properties & List Properties
+- **Log:** 
+  - **Font Mechanics:** Explored text hierarchy using `font-family` stacks (ending with web-safe fallbacks like `sans-serif` or `monospace`), `font-weight` (normal/bold or numerical scales $100-900$), and `font-style` variations.
+  - **Sizing Units:** Evaluated font sizing strategies, noting the precision of absolute units (`px`) versus the scalability of relative units: `em` (relative to parent element size) and `rem` (relative to the root `<html>` element).
+  - **Text Manipulation:** Practiced text formatting layouts with alignment options (`text-align: justify`), case conversions (`text-transform`), spacing rules (`letter-spacing`, `word-spacing`), vertical breathing room (`line-height: 1.6`), and decorative accents like underlines (`text-decoration`) or `text-shadow`.
+  - **List Customization:** Studied `<ol>` and `<ul>` semantic modifications. Used `list-style-type` (e.g., `circle`, `lower-roman`) and `list-style-image`. 
+  - **Marker Alignment:** Tested `list-style-position` behaviors, analyzing how `inside` places the bullet within the flow of content while `outside` projects it outside the element container box.
+  - **Layout Spacing:** Experimented with layout cleaning by stripping default list padding (`padding-left: 0`) and customizing individual list items (`li`) using custom borders, background colors, internal padding, and external block spacing (`margin-bottom`).
+- **Key Takeaway:** `rem` is preferred over `em` for font scaling in complex applications because it evaluates predictably against the root font size rather than compounding through nested elements. For layout styling, stripping browser-default list margins and paddings provides full structural control over component design.

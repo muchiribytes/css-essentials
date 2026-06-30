@@ -1,17 +1,11 @@
 /* ==========================================================================
-   DAY 9 LOG: CSS TEXT STYLING PROPERTIES & LIST PROPERTIES
+   DAY 10 LOG: HYPERLINK PROPERTIES, IMAGE PROPERTIES, & COMPLETION
    ========================================================================== */
 
-/* Root configuration setting baseline absolute browser size to 16px */
-html {
-  font-size: 16px;
-}
-
 body {
-  /* Web-safe sans-serif stack optimized for digital screen displays */
-  font-family: "Open Sans", "Arial", sans-serif;
-  line-height: 1.5;
-  background-color: #f5f7fa;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #ecf0f1;
   color: #2c3e50;
   margin: 0;
   padding: 40px 20px;
@@ -19,119 +13,157 @@ body {
   justify-content: center;
 }
 
-.typography-lab {
-  max-width: 750px;
+.module-wrapper {
+  max-width: 700px;
   width: 100%;
 }
 
-/* --------------------------------------------------------------------------
-   2.5 FONT & TEXT PROPERTIES SECTION
-   -------------------------------------------------------------------------- */
-.lab-header {
+.module-header {
   text-align: center;
   margin-bottom: 30px;
 }
 
-/* 2.5.2 Font-Size using Absolute Pixels (px) */
-.main-title {
-  font-size: 42px;
-  font-weight: 900;
-  color: #1a252f;
-  margin: 0 0 5px 0;
-  /* text-shadow: horiz-offset vert-offset blur color */
-  text-shadow: 2px 3px 6px rgba(0, 0, 0, 0.1);
-}
-
-.subtitle {
-  font-size: 1.1rem; /* Relative to root html size (17.6px) */
-  color: #7f8c8d;
-  font-style: italic;
-  margin: 0;
-}
-
 .card {
-  background-color: #ffffff;
+  background: white;
   padding: 30px;
-  margin-bottom: 35px;
+  margin-bottom: 30px;
   border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
 
 .card h2 {
-  font-size: 1.35rem;
   margin-top: 0;
-  margin-bottom: 20px;
-  color: #2c3e50;
-  border-bottom: 2px solid #ecf0f1;
+  border-bottom: 2px solid #f2f4f4;
   padding-bottom: 10px;
+  font-size: 1.25rem;
 }
 
-/* Web Safe Serif Font Implementation */
-.web-safe-serif {
-  font-family: "Georgia", "Times New Roman", Times, serif;
-  font-size: 1.05rem;
-  line-height: 1.7; /* Increased vertical space for serif readability */
-  color: #34495e;
+/* --------------------------------------------------------------------------
+   2.7 HYPERLINK PROPERTIES (STRICT LVFHA PSEUDO-CLASS ORDER)
+   -------------------------------------------------------------------------- */
+
+/* 1. Unvisited Links (:link) */
+a.custom-link:link {
+  color: #0000EE;
+  text-decoration: underline;
 }
 
-/* Case Transformation and Character Manipulation */
-.uppercase-spaced {
-  text-transform: uppercase;
-  font-size: 0.85rem;
-  letter-spacing: 2px; /* Manipulates individual character gaps */
-  word-spacing: 4px;      /* Manipulates spacing between words */
-  color: #16a085;
+/* 2. Visited Links (:visited) */
+a.custom-link:visited {
+  color: #551A8B;
+}
+
+/* 3. Focused Links (:focus) */
+a.custom-link:focus, a.btn-link:focus {
+  outline: 3px solid #e67e22;
+  outline-offset: 2px;
+}
+
+/* 4. Hovered Links (:hover) */
+a.custom-link:hover {
+  color: #FF0000;
+  background-color: #F0F0F0;
+  text-decoration: none;
+}
+
+/* 5. Active Links (:active) */
+a.custom-link:active {
+  color: #FF0000;
   font-weight: bold;
 }
 
-/* Text Decoration Modifiers */
-.text-decorations {
-  text-decoration: overline;
-  color: #7f8c8d;
+/* Block Button Variant showing style overrides */
+a.btn-link:link, a.btn-link:visited {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #2c3e50;
+  color: pink;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+a.btn-link:hover {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+a.btn-link:active {
+  font-weight: bold;
+  background-color: #16a085;
 }
 
 
 /* --------------------------------------------------------------------------
-   2.6 LIST PROPERTIES SECTION
+   2.8 IMAGE PROPERTIES & FILTERS
    -------------------------------------------------------------------------- */
-.list-container {
-  margin-bottom: 30px;
+.image-showcase {
+  margin-bottom: 40px;
 }
 
-.list-container h3 {
+.image-showcase h3, .stacking-zone h3 {
   font-size: 1rem;
   color: #7f8c8d;
-  margin-bottom: 12px;
 }
 
-/* 2.6.3 Circle list marker configured inside content box flow */
-.custom-bullet-list {
-  list-style-type: circle; 
-  list-style-position: inside;
-  padding-left: 10px;
-}
-
-/* 2.6.3 Lowercase Alpha markers positioned outside the list box */
-.custom-number-list {
-  list-style-type: lower-alpha; 
-  list-style-position: outside;
-  padding-left: 20px;
-}
-
-/* 2.6.4 & 2.6.5 Spaced List Box Layout Optimization */
-.spaced-list {
-  list-style-type: none; /* Strips default structural bullet markers */
-  padding-left: 0;       /* Erases browser default list indent padding */
-}
-
-.spaced-list li {
-  margin-bottom: 12px;       /* Spacing applied strictly outside individual list boxes */
-  padding: 12px 15px;        /* Internal structural clearance space */
-  background-color: #f8f9fa; /* Desaturated gray contrast box */
-  border: 1px solid #e9ecef; /* Delicate container boundaries */
-  border-radius: 4px;
+.lab-image {
+  /* Dimensions control */
+  width: 100%;
+  height: 250px;
+  max-width: 100%; /* Prevents horizontal overflowing on small devices */
   
-  /* 2.6.5 Line-height applied safely at 1.6 times paragraph element size */
-  line-height: 1.6; 
-  font-size: 0.95rem;
+  /* ASPECT CONFIGURATIONS */
+  object-fit: cover;        /* Preserves intrinsic ratio without distortion squishing */
+  object-position: center;   /* Anchors viewable tracking plane directly in the middle */
+  
+  /* STYLISTIC MODIFIERS */
+  border: 3px solid #2c3e50;
+  border-radius: 12px;       /* Uniformly rounded corners */
+  box-shadow: 5px 10px 15px rgba(0, 0, 0, 0.2); /* Depth tracking shadow */
+  
+  /* FILTER ENGINE: Converts image rendering to a desaturated state */
+  filter: grayscale(40%) brightness(0.95);
+  transition: filter 0.3s ease;
+}
+
+/* Hovering dynamically clears the grayscale filter away */
+.lab-image:hover {
+  filter: grayscale(0%) brightness(1);
+}
+
+
+/* --------------------------------------------------------------------------
+   Z-INDEX LAYER INTERSECTIONS
+   -------------------------------------------------------------------------- */
+.stacking-zone {
+  position: relative;
+  height: 160px;
+  background-color: #f8f9fa;
+  padding: 15px;
+  border-radius: 6px;
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  color: white;
+  font-weight: bold;
+  padding: 10px;
+  box-sizing: border-box;
+  border-radius: 6px;
+}
+
+.box1 {
+  background-color: #e74c3c;
+  z-index: 1; /* Sits underneath box2 */
+  top: 45px;
+  left: 20px;
+}
+
+.box2 {
+  background-color: #27ae60;
+  z-index: 2; /* Explicitly steps over box1 because of a higher numerical value */
+  top: 65px;
+  left: 50px;
+  box-shadow: 2px 4px 10px rgba(0,0,0,0.15);
 }

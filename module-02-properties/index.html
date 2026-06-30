@@ -3,60 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Day 9: Text Typography & List Properties Lab</title>
+    <title>Day 10: Hyperlinks, Images, & Module 2 Completion</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <main class="typography-lab">
-        <header class="lab-header">
-            <h1 class="main-title">Fireflies</h1>
-            <p class="subtitle">Module 2: Typography & List Architecture</p>
+    <main class="module-wrapper">
+        <header class="module-header">
+            <h1>Day 10: Hyperlinks &amp; Image Assets</h1>
+            <p>Finalizing Module 2: Interactive states and responsive media control.</p>
         </header>
 
-        <section class="card text-properties-zone">
-            <h2>2.5.2 & 2.5.3 Text & Font Modifiers</h2>
-            <p class="sample-paragraph web-safe-serif">
-                This block implements a <strong>Georgia, serif</strong> font stack. It tests relative sizing metrics alongside standard line-height ratios. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        <section class="card link-section">
+            <h2>2.7 Hyperlink Interactive Engine (LVFHA Order)</h2>
+            <p>
+                Welcome to our testing area. Please visit our 
+                <a href="#about" class="custom-link">About Page</a> to observe custom color rendering.
             </p>
-
-            <p class="sample-paragraph uppercase-spaced">
-                this text is completely transformed using text-transform and letter spacing options.
-            </p>
-
-            <p class="sample-paragraph text-decorations">
-                This text showcases an overline decoration scheme.
+            <p>
+                You can also test an <a href="#empty" class="btn-link">Empty Interaction Button</a> 
+                which demonstrates radical state styling transformations on focus and click actions.
             </p>
         </section>
 
-        <section class="card list-properties-zone">
-            <h2>2.6 List Marker Configurations</h2>
-
-            <div class="list-container">
-                <h3>Unordered List (Inside Position / Circle Type)</h3>
-                <ul class="custom-bullet-list">
-                    <li>Apples</li>
-                    <li>Bananas</li>
-                    <li>Cherries</li>
-                </ul>
+        <section class="card image-section">
+            <h2>2.8 Media Properties &amp; Aspect Overrides</h2>
+            
+            <div class="image-showcase">
+                <h3>Object-Fit: Cover Matrix with Rounded Corners &amp; Filter Overlays</h3>
+                <img class="lab-image" src="https://images.unsplash.com/photo-1597848212624-a19eb35e2651?q=80&w=600&h=300&fit=crop" alt="Sunflowers Lab">
             </div>
 
-            <div class="list-container">
-                <h3>Ordered List (Outside Position / Lower-Alpha Type)</h3>
-                <ol class="custom-number-list">
-                    <li>First Step</li>
-                    <li>Second Step</li>
-                    <li>Third Step</li>
-                </ol>
-            </div>
-
-            <div class="list-container">
-                <h3>Spaced List Box Layout (Cleaned Paddings + Borders)</h3>
-                <ul class="spaced-list">
-                    <li><strong>Item 1:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. This long block relies on a 1.6 line-height ratio to preserve baseline structural clarity.</li>
-                    <li><strong>Item 2:</strong> Quisque vitae est at massa vulputate pharetra non eget lorem. Notice the outer margins isolating individual blocks safely.</li>
-                    <li><strong>Item 3:</strong> Integer aliquam, eros eget rutrum porta, tortor erat tempus quam. Built using desaturated gray blocks for visual isolation.</li>
-                </ul>
+            <div class="stacking-zone">
+                <h3>Z-Index Layer Stacking Control</h3>
+                <div class="box box1">Z-Index: 1</div>
+                <div class="box box2">Z-Index: 2</div>
             </div>
         </section>
     </main>

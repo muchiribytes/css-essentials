@@ -35,3 +35,13 @@
   - **Marker Alignment:** Tested `list-style-position` behaviors, analyzing how `inside` places the bullet within the flow of content while `outside` projects it outside the element container box.
   - **Layout Spacing:** Experimented with layout cleaning by stripping default list padding (`padding-left: 0`) and customizing individual list items (`li`) using custom borders, background colors, internal padding, and external block spacing (`margin-bottom`).
 - **Key Takeaway:** `rem` is preferred over `em` for font scaling in complex applications because it evaluates predictably against the root font size rather than compounding through nested elements. For layout styling, stripping browser-default list margins and paddings provides full structural control over component design.
+
+### 🗓 Day 10: June 30, 2026
+- **Topics:** Hyperlink States, Image Presentation Properties, & Module 2 Completion
+- **Log:** 
+  - **Hyperlink Pseudo-classes:** Mastered the **LVFHA** specific order principle (`:link`, `:visited`, `:focus`, `:hover`, `:active`) to ensure correct browser cascade rules when overriding core link aesthetics.
+  - **Asset Scaling:** Studied visual media container rules, using `max-width: 100%` for basic fluid responsiveness alongside `object-fit: cover` to cleanly resize imagery while preserving natural aspect ratios. 
+  - **Aesthetic Refinement:** Explored decorative layout enhancements using `border-radius` variants (including specific directional shorthand values and `50%` configurations for circular crops) and transparency shadows.
+  - **Direct Manipulation:** Tested the native `filter` function properties to alter image bitmaps natively inside the browser container engine (such as `grayscale()`, `blur()`, and `brightness()`).
+  - **Layer Depth:** Examined the `z-index` property matrix to explicitly control stacking orders on overlapping absolute-positioned structural components.
+- **Key Takeaway:** The exact ordering of link pseudo-classes (LVFHA) is a mandatory architectural design rule; reversing them breaks the CSS cascade. Similarly, combining absolute sizing bounds with `object-fit: cover` keeps images crisp and contained without distortion.

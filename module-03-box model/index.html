@@ -3,44 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Day 11: CSS Box Model Essentials</title>
+    <title>Day 12: Backgrounds &amp; Box Shadows</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
     <main class="lab-container">
         <header class="lab-header">
-            <h1>Day 11: The CSS Box Model</h1>
-            <p>Module 3: Visualizing structural layout, spacing boundaries, and component dimension math.</p>
+            <h1>Day 12: Box Element Backgrounds</h1>
+            <p>Module 3: Controlling image boundaries, clipping spaces, and 3D frame shadows.</p>
         </header>
 
-        <section class="card display-modes-zone">
-            <h2>3.1.1 Display Boxes (Block vs. Inline)</h2>
+        <section class="card">
+            <h2>3.3.2 Colors, Images &amp; Rounded Corners</h2>
+            <div class="rounded-box">Rounded Box</div>
+        </section>
+
+        <section class="card">
+            <h2>3.3.3 Background Size &amp; Clipping Bounds</h2>
+            <p>Compare how different <code>background-clip</code> values change where the background painting engine stops:</p>
             
-            <div class="block-example">
-                I am a <strong>Block Element (&lt;div&gt;)</strong>. I automatically force a new line and occupy 100% of the width provided by my parent container.
+            <div class="clip-demo border-box-clip">
+                <strong>border-box (Default)</strong><br>
+                Extends underneath the border.
             </div>
-            
-            <div class="inline-container">
-                <span class="inline-example">Inline Box A (&lt;span&gt;)</span>
-                <span class="inline-example">Inline Box B (&lt;span&gt;)</span>
-                <p class="inline-note">Notice how inline boxes flow side-by-side. Vertical margins and paddings will not push other elements away!</p>
+
+            <div class="clip-demo padding-box-clip">
+                <strong>padding-box</strong><br>
+                Stops at the padding edge. No background under the border.
             </div>
         </section>
 
-        <section class="card box-model-zone">
-            <h2>3.1.2 &amp; 3.2 Core Box Model Breakdown</h2>
-            <p>The element below highlights how Content, Padding, Borders, and Margins stack together to build total layout dimensions.</p>
+        <section class="card alignment-zone">
+            <h2>3.3.4 3D Shadow Framing &amp; Line-Height Alignment</h2>
+            <p>Using offsets and blur variables to make a flat box appear to float off the screen plane.</p>
             
-            <div class="master-box">
-                <p class="box-content-text">I'm a paragraph stuck in a box!</p>
-            </div>
-
-            <div class="math-card">
-                <h3>Total Width Dimension Math Matrix:</h3>
-                <p><code>200px (Content) + 40px (Left/Right Padding) + 10px (Left/Right Border) = 250px Total Rendered Width</code></p>
-                <p class="margin-note">* Note: The 30px Margin creates external clearance space and sits outside this width calculation.</p>
-            </div>
+            <div class="shadow-box">Shadow Box</div>
         </section>
     </main>
 

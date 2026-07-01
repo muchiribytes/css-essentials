@@ -39,3 +39,10 @@
     - `display: none`: Unmounts element visually from view, entirely collapsing its box structural boundaries and completely removing it from the document flow.
     - `visibility: hidden`: Paints the box entirely invisible while keeping its exact physical space footprint locked and allocated inside the active document layer.
 - **Key Takeaway:** `display: none` completely deletes a box element's footprint from the calculated document geometry flow, forcing surrounding content to shift and reflow. Conversely, `visibility: hidden` hides visual content pixels while leaving the box model dimensions completely intact as an invisible spatial placeholder.
+
+### 🗓 Day 14: July 4, 2026
+- **Topics:** Weekly Review & Portfolio Project Review Day (Weekly Build)
+- **Log:** - **Weekly Consolidation:** Reviewed all core layout concepts covered from Day 8 to Day 13, including the standard Box Model layout structures, total width/height block geometry computations, boundaries (`min/max` parameters), and background rendering states.
+  - **Portfolio Integration Review:** Evaluated layout spacing on the personal portfolio landing page project using proper box layers (margins, padding, explicit content sizing boundaries).
+  - **Structural Adjustments:** Reviewed component layouts by manipulating `display` values (`block`, `inline-block`), handling content overflow mechanics safely, and configuring clean element visibility systems.
+- **Key Takeaway:** Structural programming requires a strict mental model of how properties interact. Mastering the behavioral differences between `display: none` and `visibility: hidden`, or how backgrounds map to `padding-box` vs `border-box`, eliminates standard alignment bugs before writing layout code.

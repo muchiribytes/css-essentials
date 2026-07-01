@@ -20,4 +20,4 @@ A dedicated workspace for mastering CSS, tracking daily progression through core
 - [x] **Day 11:** Module 3: Introduction to the Box Model & Box Model Essentials
 - [x] **Day 12:** Module 3: Adding Backgrounds to Box Elements
 - [x] **Day 13:** Module 3: Controlling Content Layout & Controlling Element Visibility
-- [ ] **Day 14:** Weekly Review & Catch-up Day
+- [x] **Day 14:** Weekly Review & Catch-up Day

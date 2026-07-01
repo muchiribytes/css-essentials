@@ -12,7 +12,7 @@
   - **Style Configurations:** Tested directional longhands against multi-value shorthand properties for paddings and margins. Reviewed border styles (`solid`, `dashed`, `double`, `inset`).
 - **Key Takeaway:** Setting `width` or `height` on an element only alters its internal content box by default; any added padding or borders scale the element's actual footprint outward on the screen.
 
-### 🗓 Day 12: July 2, 2026
+### 🗓 Day 12: July 1, 2026
 - **Topics:** Adding Backgrounds to Box Elements (Colors, Images, Clips, and Shadows)
 - **Log:** 
   - **Background Refresher:** Re-evaluated combining `background-color` and `background-image` alongside positioning and `border-radius: 15px` to create clean, modern element containers.
@@ -25,7 +25,7 @@
   - **Performance & Accessibility Rules:** Noted web optimization standards, including asset compression to prevent high load times, ensuring strong text contrast ratios over background imagery, and utilizing shadows sparingly to avoid interface clutter.
 - **Key Takeaway:** `background-clip` changes how backgrounds map to the Box Model layers. When designing components with translucent or dashed borders, switching from `border-box` to `padding-box` prevents the background color from bleeding underneath and distorting the border style.
 
-### 🗓 Day 13: July 3, 2026
+### 🗓 Day 13: July 1, 2026
 - **Topics:** Controlling Content Layout, Alignment Matrices, & Element Visibility Rules
 - **Log:** 
   - **Overflow Handling:** Evaluated boundary containment with the `overflow` property (`visible`, `hidden`, `scroll`, `auto`) to control content clips and manage browser-injected scrollbars when nested nodes breach explicit parent heights or widths.
@@ -40,9 +40,19 @@
     - `visibility: hidden`: Paints the box entirely invisible while keeping its exact physical space footprint locked and allocated inside the active document layer.
 - **Key Takeaway:** `display: none` completely deletes a box element's footprint from the calculated document geometry flow, forcing surrounding content to shift and reflow. Conversely, `visibility: hidden` hides visual content pixels while leaving the box model dimensions completely intact as an invisible spatial placeholder.
 
-### 🗓 Day 14: July 4, 2026
+### 🗓 Day 14: July 1, 2026
 - **Topics:** Weekly Review & Portfolio Project Review Day (Weekly Build)
 - **Log:** - **Weekly Consolidation:** Reviewed all core layout concepts covered from Day 8 to Day 13, including the standard Box Model layout structures, total width/height block geometry computations, boundaries (`min/max` parameters), and background rendering states.
   - **Portfolio Integration Review:** Evaluated layout spacing on the personal portfolio landing page project using proper box layers (margins, padding, explicit content sizing boundaries).
   - **Structural Adjustments:** Reviewed component layouts by manipulating `display` values (`block`, `inline-block`), handling content overflow mechanics safely, and configuring clean element visibility systems.
 - **Key Takeaway:** Structural programming requires a strict mental model of how properties interact. Mastering the behavioral differences between `display: none` and `visibility: hidden`, or how backgrounds map to `padding-box` vs `border-box`, eliminates standard alignment bugs before writing layout code.
+
+### 🗓 Day 15: July 1, 2026
+- **Topics:** Understanding Positioning in CSS (`static`, `relative`, `absolute`, `fixed`, `sticky`)
+- **Log:** 
+  - **Static Core (Default):** Reviewed default browser layout flow where `position: static` ignores physical directional properties (`top`, `bottom`, `left`, `right`) and conforms purely to standard document geometry rules.
+  - **Relative Offsets:** Practiced using `position: relative` to shift elements away from their natural flow coordinates without disrupting surrounding sibling boxes. The element's original space footprint remains completely allocated in the document layer.
+  - **Absolute Coordination:** Mastered removing nodes completely from the document flow using `position: absolute`. Positioned elements map their target offsets to the boundary limits of their nearest non-static ancestor (`position: relative/absolute/fixed`); if none exists, they default to the global viewport canvas.
+  - **Fixed Overlays:** Engineered fixed canvas positioning (`position: fixed`) to lock elements directly to the user's viewport boundaries, making them completely immune to scrolling events. Added structural offsets like `margin-top` on sibling elements to prevent layout overlaps.
+  - **Sticky Hybrids:** Investigated `position: sticky` context rules, which act as a relative flow item until the scroll frame crosses a designated constraint threshold (e.g., `top: 0`), triggering a fixed pinning effect.
+- **Key Takeaway:** For `position: absolute` to align correctly inside a parent container, the parent *must* explicitly declare a positioning context (most commonly `position: relative`). For `position: sticky` to function, the element must declare a threshold rule (like `top`), and its parent container's height must extend beyond the active scroll window.

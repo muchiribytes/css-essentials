@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 11: CSS Box Model Essentials</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <main class="lab-container">
+        <header class="lab-header">
+            <h1>Day 11: The CSS Box Model</h1>
+            <p>Module 3: Visualizing structural layout, spacing boundaries, and component dimension math.</p>
+        </header>
+
+        <section class="card display-modes-zone">
+            <h2>3.1.1 Display Boxes (Block vs. Inline)</h2>
+            
+            <div class="block-example">
+                I am a <strong>Block Element (&lt;div&gt;)</strong>. I automatically force a new line and occupy 100% of the width provided by my parent container.
+            </div>
+            
+            <div class="inline-container">
+                <span class="inline-example">Inline Box A (&lt;span&gt;)</span>
+                <span class="inline-example">Inline Box B (&lt;span&gt;)</span>
+                <p class="inline-note">Notice how inline boxes flow side-by-side. Vertical margins and paddings will not push other elements away!</p>
+            </div>
+        </section>
+
+        <section class="card box-model-zone">
+            <h2>3.1.2 &amp; 3.2 Core Box Model Breakdown</h2>
+            <p>The element below highlights how Content, Padding, Borders, and Margins stack together to build total layout dimensions.</p>
+            
+            <div class="master-box">
+                <p class="box-content-text">I'm a paragraph stuck in a box!</p>
+            </div>
+
+            <div class="math-card">
+                <h3>Total Width Dimension Math Matrix:</h3>
+                <p><code>200px (Content) + 40px (Left/Right Padding) + 10px (Left/Right Border) = 250px Total Rendered Width</code></p>
+                <p class="margin-note">* Note: The 30px Margin creates external clearance space and sits outside this width calculation.</p>
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>

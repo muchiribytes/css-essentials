@@ -24,3 +24,18 @@
   - **Typography Alignment Hack:** Documented a vertical alignment layout technique for single lines of text: setting the `line-height` of the paragraph exactly equal to the fixed `height` of its parent `div` container.
   - **Performance & Accessibility Rules:** Noted web optimization standards, including asset compression to prevent high load times, ensuring strong text contrast ratios over background imagery, and utilizing shadows sparingly to avoid interface clutter.
 - **Key Takeaway:** `background-clip` changes how backgrounds map to the Box Model layers. When designing components with translucent or dashed borders, switching from `border-box` to `padding-box` prevents the background color from bleeding underneath and distorting the border style.
+
+### 🗓 Day 13: July 3, 2026
+- **Topics:** Controlling Content Layout, Alignment Matrices, & Element Visibility Rules
+- **Log:** 
+  - **Overflow Handling:** Evaluated boundary containment with the `overflow` property (`visible`, `hidden`, `scroll`, `auto`) to control content clips and manage browser-injected scrollbars when nested nodes breach explicit parent heights or widths.
+  - **Horizontal Alignment:** Practiced horizontal text alignment using `text-align: center` on inline items, alongside utilizing `margin: auto` blocks to center structured block-level containers within their parent layouts.
+  - **Vertical Alignment:** Tested native alignment frameworks. Experimented with structural vertical centering using modern Flexbox parameters (`display: flex; align-items: center;`) alongside testing the legacy `vertical-align: middle` keyword modifier explicitly for baseline inline/inline-block content flows.
+  - **The Display Engine Layout Matrix:** Mastered the structural transformations of the `display` property rules:
+    - `block`: Fills entire horizontal plane row width, initiates a new block line, completely respects all four side margins/paddings.
+    - `inline`: Flows natively along text paths, scales dynamically to internal content data footprint dimensions, completely drops vertical sizing constraints (`width`/`height`) and ignores vertical spatial shifts from margins or paddings.
+    - `inline-block`: Best of both worlds; flows inline seamlessly with neighboring text without initiating line breaks, while completely respecting block values like explicit width/height parameters and box margins/paddings.
+  - **Visibility Mechanics:** Contrasted structural behavior modifications between hiding approaches:
+    - `display: none`: Unmounts element visually from view, entirely collapsing its box structural boundaries and completely removing it from the document flow.
+    - `visibility: hidden`: Paints the box entirely invisible while keeping its exact physical space footprint locked and allocated inside the active document layer.
+- **Key Takeaway:** `display: none` completely deletes a box element's footprint from the calculated document geometry flow, forcing surrounding content to shift and reflow. Conversely, `visibility: hidden` hides visual content pixels while leaving the box model dimensions completely intact as an invisible spatial placeholder.

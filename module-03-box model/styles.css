@@ -1,110 +1,196 @@
 /* ==========================================================================
-   DAY 12 LOG: ADDING BACKGROUNDS TO BOX ELEMENTS
+   DAY 13 LOG: CONTROLLING CONTENT LAYOUT & VISIBILITY
    ========================================================================== */
+
+/* 3.4.6 Page Container Layout Setup */
+.page-container {
+  width: 90%;
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border: 2px solid #ccc;
+  overflow: hidden; /* Clears layout and prevents edge leakage */
+}
 
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
-  background-color: #f0f4f8;
-  color: #2c3e50;
-  margin: 0;
-  padding: 40px 20px;
-  display: flex;
-  justify-content: center;
-}
-
-.lab-container {
-  max-width: 700px;
-  width: 100%;
-}
-
-.lab-header {
-  text-align: center;
-  margin-bottom: 30px;
-}
-
-.card {
-  background: #ffffff;
-  padding: 30px;
-  margin-bottom: 30px;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-}
-
-.card h2 {
-  margin-top: 0;
-  color: #2c3e50;
-  border-bottom: 2px solid #eef2f5;
-  padding-bottom: 10px;
-  font-size: 1.25rem;
-}
-
-/* --------------------------------------------------------------------------
-   3.3.2 ROUNDED BOX MODIFIERS
-   -------------------------------------------------------------------------- */
-.rounded-box {
-  background-color: lightblue;
-  background-image: url('https://edube.org/uploads/media/default/0001/04/red-flower.png');
-  background-repeat: no-repeat;
-  background-position: center;
-  border-radius: 15px; /* Adds rounded corners to the box frame */
-  padding: 20px;
-  margin: 10px auto;
-  width: 300px;
-  height: 200px;
-  box-sizing: border-box; /* Ensures padding doesn't break our width dimensions */
+  background-color: #f0f2f5;
   color: #333;
-  font-weight: bold;
+  margin: 0;
+  padding: 20px;
+}
+
+.header {
+  background-color: #f4f4f4;
+  text-align: center;
+  padding: 15px;
+  margin-bottom: 25px;
+  border-radius: 4px;
+}
+
+.main-content {
+  background-color: #ffffff;
+}
+
+.lab-card {
+  background-color: #fafbfc;
+  border: 1px solid #e1e4e6;
+  padding: 20px;
+  margin-bottom: 25px;
+  border-radius: 6px;
+}
+
+.lab-card h2 {
+  margin-top: 0;
+  font-size: 1.2rem;
+  color: #2c3e50;
+  border-bottom: 2px solid #ecf0f1;
+  padding-bottom: 8px;
 }
 
 /* --------------------------------------------------------------------------
-   3.3.3 BACKGROUND SIZE & CLIPPING EXPERIMENTS
+   3.4.2 CONTROLLING CONTENT OVERFLOW
    -------------------------------------------------------------------------- */
-.clip-demo {
-  background-color: #add8e6;
-  background-image: url('https://edube.org/uploads/media/default/0001/04/flowers-banner.png');
-  background-size: cover; /* Background fills container without distortion */
-  padding: 30px;
-  margin: 20px 0;
-  color: white;
-  text-shadow: 1px 1px 4px rgba(0,0,0,0.8);
-  
-  /* Thick dashed border so we can easily see what happens underneath it */
-  border: 8px dashed rgba(0, 0, 0, 0.6); 
-}
-
-/* The background slips all the way under the dark dashed lines */
-.border-box-clip {
-  background-clip: border-box;
-}
-
-/* The background clears out from under the border entirely */
-.padding-box-clip {
-  background-clip: padding-box;
-}
-
-/* --------------------------------------------------------------------------
-   3.3.4 BOX SHADOW & LINE-HEIGHT VERTICAL CENTERING
-   -------------------------------------------------------------------------- */
-.alignment-zone {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.shadow-box {
-  /* Values: X-offset, Y-offset, Blur-radius, Color */
-  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); /* Creates the 3D elevation depth */
-  
+.overflow-container {
   width: 200px;
   height: 100px;
-  background-color: #e0e0e0;
-  margin: 30px 0;
+  background-color: #add8e6;
+  border: 1px solid #333;
+  overflow: scroll; /* Forces browser scrollbar layer rendering automatically */
+  margin: 15px 0;
+}
+
+.overflow-content {
+  width: 250px; /* Wider footprint triggers horizontal scrollbar */
+  height: 150px; /* Taller footprint triggers vertical scrollbar */
+  padding: 5px;
+}
+
+.overflow-content p {
+  margin: 0;
+  font-size: 0.85rem;
+}
+
+/* --------------------------------------------------------------------------
+   3.4.3 - 3.4.5 ALIGNMENT CONFIGURATIONS
+   -------------------------------------------------------------------------- */
+.alignment-block {
+  margin: 15px 0;
+  background: #ffffff;
+  border: 2px solid #ccc;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.inline-indicator {
+  border: 1px dotted #e74c3c;
+  padding: 8px;
+  margin: 0;
+}
+
+/* Horizontal Alignment Rule */
+.center-align-box {
+  text-align: center;
+}
+
+/* Vertical Alignment Scenario 1: Flex Box Configuration */
+.flex-vertical-box {
+  height: 150px;
+  display: flex;
+  align-items: center; /* Aligns content tracking along the vertical center axis */
+}
+
+/* Vertical Alignment Scenario 2: Inline Element Alignment Rule */
+.span-vertical-align {
+  vertical-align: middle;
+  border: 1px dotted #2980b9;
+  padding: 4px;
+  background-color: #ecf0f1;
+}
+
+/* --------------------------------------------------------------------------
+   3.5 DISPLAY ENGINE PROPERTIES
+   -------------------------------------------------------------------------- */
+
+/* Navigation layout using default block conversion to inline style */
+.inline-menu {
+  list-style: none;
+  padding-left: 0;
+}
+
+.menu-item {
+  display: inline; /* Strips block property stack logic to sit horizontally */
+  background-color: #f1c40f;
+  margin-right: 10px;
+  padding: 5px 10px;
+  border-radius: 3px;
+}
+
+/* Block conversion styling rule */
+.block-element {
+  display: block; /* Turns naturally inline span into a multi-line box block */
+  background-color: #add8e6;
+  margin: 10px 0;
+  padding: 10px;
   font-weight: bold;
-  
-  /* Horizontal alignment */
-  text-align: center; 
-  
-  /* PERFECT VERTICAL CENTERING: Match line-height exactly to the container height */
-  line-height: 100px; 
+}
+
+/* Inline block evaluation styling rule */
+.inline-block-element {
+  display: inline-block; /* Merges adjacent positioning with internal box sizing attributes */
+  background-color: #f19066;
+  color: white;
+  margin: 5px;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+/* --------------------------------------------------------------------------
+   3.5.4 & 3.5.5 VISIBILITY PROPERTY COMPARISON
+   -------------------------------------------------------------------------- */
+.row-layout {
+  display: flex;
+  gap: 15px;
+  background-color: #eaeff2;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 4px;
+}
+
+.visibility-box {
+  width: 120px;
+  padding: 15px 5px;
+  text-align: center;
+  font-size: 0.8rem;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+.default-box {
+  background-color: #2ecc71;
+  color: white;
+}
+
+/* The element layout footprint collapses completely from view tracking */
+.hidden-display-box {
+  display: none;
+}
+
+/* The element hidden rendering keeps total area layout allocations unchanged */
+.hidden-visibility-box {
+  visibility: hidden;
+  background-color: #e74c3c;
+}
+
+/* 3.4.6 Footer Configuration */
+.footer {
+  background-color: #f4f4f4;
+  text-align: center;
+  padding: 10px;
+  font-size: 0.9rem;
+  color: #7f8c8d;
+  border-radius: 4px;
+  margin-top: 20px;
 }

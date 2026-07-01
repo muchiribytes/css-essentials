@@ -3,44 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Day 12: Backgrounds &amp; Box Shadows</title>
+    <title>Day 13: Content Layout & Element Visibility Lab</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <main class="lab-container">
-        <header class="lab-header">
-            <h1>Day 12: Box Element Backgrounds</h1>
-            <p>Module 3: Controlling image boundaries, clipping spaces, and 3D frame shadows.</p>
+    <div class="page-container">
+        <header class="header">
+            <h1>Day 13: Layout &amp; Visibility</h1>
+            <p>Module 3: Managing container boundaries, alignments, and viewport presence.</p>
         </header>
 
-        <section class="card">
-            <h2>3.3.2 Colors, Images &amp; Rounded Corners</h2>
-            <div class="rounded-box">Rounded Box</div>
-        </section>
-
-        <section class="card">
-            <h2>3.3.3 Background Size &amp; Clipping Bounds</h2>
-            <p>Compare how different <code>background-clip</code> values change where the background painting engine stops:</p>
+        <main class="main-content">
             
-            <div class="clip-demo border-box-clip">
-                <strong>border-box (Default)</strong><br>
-                Extends underneath the border.
-            </div>
+            <section class="lab-card">
+                <h2>3.4.2 Container Boundary Overflow</h2>
+                <p>The blue box below has a restricted footprint. Scrollbars appear automatically because the text layer inside exceeds its dimensions.</p>
+                
+                <div class="overflow-container">
+                    <div class="overflow-content">
+                        <p>Guitars are versatile musical instruments known for their melodic tones and rhythmic capabilities. With their strings and resonant bodies, guitars produce a wide range of sounds, from gentle and soothing to powerful and electrifying. These iconic instruments come in various types, including acoustic, classical, and electric guitars, each with its unique character and playing style.</p>
+                    </div>
+                </div>
+            </section>
 
-            <div class="clip-demo padding-box-clip">
-                <strong>padding-box</strong><br>
-                Stops at the padding edge. No background under the border.
-            </div>
-        </section>
+            <section class="lab-card">
+                <h2>3.4.4 &amp; 3.4.5 Axis Alignment Modifiers</h2>
+                
+                <div class="alignment-block center-align-box">
+                    <p class="inline-indicator">Horizontally centered block content.</p>
+                </div>
 
-        <section class="card alignment-zone">
-            <h2>3.3.4 3D Shadow Framing &amp; Line-Height Alignment</h2>
-            <p>Using offsets and blur variables to make a flat box appear to float off the screen plane.</p>
-            
-            <div class="shadow-box">Shadow Box</div>
-        </section>
-    </main>
+                <div class="alignment-block flex-vertical-box">
+                    <p class="inline-indicator">Vertically centered flex block.</p>
+                </div>
+
+                <div class="alignment-block baseline-box">
+                    <p>Standard flow line containing <span class="span-vertical-align">vertically aligned middle</span> inline text metadata.</p>
+                </div>
+            </section>
+
+            <section class="lab-card visibility-playground">
+                <h2>3.5 Display vs. Visibility Behavior</h2>
+                <p>Observe below how <code>display: none</code> removes structural boundaries completely while <code>visibility: hidden</code> preserves the empty layout footprint.</p>
+                
+                <div class="row-layout">
+                    <div class="visibility-box default-box">Box A (Visible)</div>
+                    <div class="visibility-box hidden-display-box">Box B (display: none)</div>
+                    <div class="visibility-box default-box">Box C (Visible)</div>
+                </div>
+
+                <div class="row-layout">
+                    <div class="visibility-box default-box">Box X (Visible)</div>
+                    <div class="visibility-box hidden-visibility-box">Box Y (visibility: hidden)</div>
+                    <div class="visibility-box default-box">Box Z (Visible)</div>
+                </div>
+            </section>
+
+            <section class="lab-card">
+                <h2>3.5.2 Display Property Variations</h2>
+                
+                <h3>Horizontal List (display: inline overrides):</h3>
+                <ul class="inline-menu">
+                    <li class="menu-item">Home</li>
+                    <li class="menu-item">About</li>
+                    <li class="menu-item">Services</li>
+                    <li class="menu-item">Contact</li>
+                </ul>
+
+                <h3>Display Block Override on Inline Span:</h3>
+                <p>This is standard prose text containing <span class="block-element">a span element forced to display: block</span> which claims full layout width properties.</p>
+
+                <h3>Inline-Block Multi-Boxes (Allows margin + padding side by side):</h3>
+                <p>Review the flow layout here: <span class="inline-block-element">First Item</span> and <span class="inline-block-element">Second Item</span> positioned adjacently.</p>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>Module 3 Core Mechanics Completed</p>
+        </footer>
+    </div>
 
 </body>
 </html>

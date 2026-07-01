@@ -56,3 +56,14 @@
   - **Fixed Overlays:** Engineered fixed canvas positioning (`position: fixed`) to lock elements directly to the user's viewport boundaries, making them completely immune to scrolling events. Added structural offsets like `margin-top` on sibling elements to prevent layout overlaps.
   - **Sticky Hybrids:** Investigated `position: sticky` context rules, which act as a relative flow item until the scroll frame crosses a designated constraint threshold (e.g., `top: 0`), triggering a fixed pinning effect.
 - **Key Takeaway:** For `position: absolute` to align correctly inside a parent container, the parent *must* explicitly declare a positioning context (most commonly `position: relative`). For `position: sticky` to function, the element must declare a threshold rule (like `top`), and its parent container's height must extend beyond the active scroll window.
+
+### 🗓 Day 16: July 2, 2026
+- **Topics:** Customizing Tables & Forms with CSS & Module 3 Completion
+- **Log:** 
+  - **Table Mechanics:** Mastered data grid optimization using `border-collapse: collapse` to completely strip adjacent double-borders down into clean, shared grid lines.
+  - **Zebra Striping:** Implemented advanced readability systems using functional structural pseudo-classes (`tr:nth-child(even)`) to apply background tints alongside contextual interactive feedback (`tr:hover`).
+  - **Fluid Data Containers:** Engineered small-screen view safety using horizontal containment boundaries (`overflow-x: auto` on a parent wrapper element) paired with absolute minimum constraints (`min-width`) on the table node to prevent cellular text compression.
+  - **Form Architecture:** Structured semantic form controls. Converted `<label>` elements into block boxes (`display: block`) to naturally force inputs onto new lines without resorting to break tags.
+  - **Interactive Inputs:** Designed modern, accessible text inputs and buttons. Utilized explicit attribute selectors (`input[type="text"]`), user feedback variables (`cursor: pointer`), and active state alterations (`:hover`).
+  - **Semantic Grouping:** Customized layout segmentation by restyling standard structural field boundaries (`<fieldset>`) and programmatic headings (`<legend>`) with custom paddings, matching background borders, and typography shifts (`text-transform: uppercase`).
+- **Key Takeaway:** For responsive table layouts, wrapping the `<table>` element inside a dedicated scrollable `<div>` parent container layer that handles `overflow-x: auto` keeps the page flow unbroken when complex dataset footprints exceed viewport limits.

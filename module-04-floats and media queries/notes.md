@@ -37,3 +37,13 @@
     - **Tablet Breakpoint (`max-width: 768px`):** Drops layout footprint columns into a clean 2-column grid row matrix (`width: 50%`).
     - **Mobile Breakpoint (`max-width: 480px`):** Re-collapses grid items entirely down into a singular stack flow (`width: 100%`; `float: none;`).
 - **Key Takeaway:** Media queries evaluate conditional expressions in real time. When combining multiple `max-width` feature queries, rules must be stacked intentionally from largest pixel value down to smallest to prevent larger viewport rules from matching first and overriding subsequent small-screen modifications.
+
+### 🗓 Day 20: July 2, 2026
+- **Topics:** Float Grid Layouts, Practical Interface Implementations, & Module 4 Completion
+- **Log:** 
+  - **Geometric Grid Configurations:** Constructed a functional 2x2 multi-row layout grid by configuring fractional child boxes (`width: 50%`) wrapped inside a self-clearing, overflow-managed block element (`overflow: hidden`).
+  - **Box Model Protection:** Integrated explicit box calculation overrides (`box-sizing: border-box`) across multi-column nodes to prevent side padding and decorative borders from inflating the element's actual footprint beyond its percentage limits.
+  - **Fluid Grid Toggling:** Built media-driven layout transforms targeting smaller screens (`max-width: 600px`) that instantly expand horizontal grid items to standalone blocks (`width: 100%`) for clean vertical viewing.
+  - **Inline Component Engineering:** Structured a classic, semantic horizontal navbar layout by using floating block-level list elements (`.menu-item { float: left; }`) alongside contextual link feedback.
+  - **Component Card Layouts:** Engineered a symmetric multi-card client testimonial section, splitting the row footprint into thirds (`width: 33.333%`) and securing layout alignment using explicit text alignments and box drop shadows.
+- **Key Takeaway:** By default, browsers compute element sizes by adding padding and borders on top of the declared width. Enforcing `box-sizing: border-box` is mandatory when building float-based grids; otherwise, adding even a single pixel of padding will break row alignment and force items to drop to the next line.

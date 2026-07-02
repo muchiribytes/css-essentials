@@ -3,61 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Day 19: Fluid Responsive Breakpoint Lab</title>
+    <title>Day 20: Comprehensive Float Mechanics Layout</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <main class="responsive-wrapper">
-        <header class="lab-header">
-            <h1>Day 19: Mastering CSS Media Queries</h1>
-            <p>Module 4: Implementing viewport condition filters to manipulate grid mechanics across target hardware configurations.</p>
-            
-            <!-- Dynamic State Indicator HUD -->
-            <div class="breakpoint-hud">
-                <span class="hud-desktop">🖥️ Mode: Desktop Width (>768px) &rarr; 3-Col Layout</span>
-                <span class="hud-tablet">📟 Mode: Tablet Breakpoint (&le;768px) &rarr; 2-Col Layout</span>
-                <span class="hud-mobile">📱 Mode: Mobile Breakpoint (&le;480px) &rarr; Stacked 1-Col Layout</span>
-            </div>
+    <!-- 4.6.3 Navigation Bar Component with Float -->
+    <nav class="navbar">
+        <ul class="menu">
+            <li class="menu-item"><a href="#grid-section">Home Grid</a></li>
+            <li class="menu-item"><a href="#article-section">Article Wrap</a></li>
+            <li class="menu-item"><a href="#testimonials-section">Testimonials</a></li>
+            <li class="menu-item" style="float: right;"><a href="#">Module 4 Complete ✓</a></li>
+        </ul>
+    </nav>
+
+    <main class="lab-container">
+        
+        <header class="module-header">
+            <h1>Day 20: Float Architectures &amp; Module 4 Completion</h1>
+            <p>Practical integration of document flow manipulation, layout grids, structural clearfixes, and inline element grouping.</p>
         </header>
 
-        <!-- 4.4.4 Stepwise Adaptive Grid Section -->
-        <section class="card">
-            <h2>4.4.4 Dynamic Adaptive Column Layout</h2>
-            <p>Resize your browser's window to watch the columns adapt using Media Query conditional statements.</p>
+        <!-- 4.5.2 & 4.5.3 Adaptive 2x2 Grid Layout -->
+        <section id="grid-section" class="lab-card">
+            <h2>4.5.2 &amp; 4.5.3 Responsive Float-Based Grid (2x2 Matrix)</h2>
+            <p class="section-desc">Responsive distribution pattern: 50% width columns wrapping automatically, dropping cleanly down to 100% full-width on windows beneath 600px wide.</p>
             
-            <!-- Clearfix container holds the floated column blocks -->
-            <div class="container clearfix">
-                <div class="column">
-                    <div class="column-inner box-red">
-                        <h3>Module Node A</h3>
-                        <p>Occupies 33.33% on desktop viewports, scaling down gracefully into lower target environments.</p>
+            <div class="container float-grid-root">
+                <div class="grid-item">
+                    <div class="item-inner shadow-1">
+                        <h3>Item 1</h3>
+                        <p>First matrix sector node. Aligns perfectly left with half width space boundaries.</p>
                     </div>
                 </div>
-                <div class="column">
-                    <div class="column-inner box-blue">
-                        <h3>Module Node B</h3>
-                        <p>Adapts to split a 50/50 block tracking partition matrix once shifted beneath tablet margins.</p>
+                <div class="grid-item">
+                    <div class="item-inner shadow-2">
+                        <h3>Item 2</h3>
+                        <p>Second matrix sector node. Occupies the right column plane of row segment one.</p>
                     </div>
                 </div>
-                <div class="column">
-                    <div class="column-inner box-green">
-                        <h3>Module Node C</h3>
-                        <p>Drops entirely out of the horizontal float stream when squeezed onto tight mobile displays.</p>
+                <div class="grid-item">
+                    <div class="item-inner shadow-3">
+                        <h3>Item 3</h3>
+                        <p>Third matrix sector node. Automatically pushed downwards into row frame two.</p>
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <div class="item-inner shadow-4">
+                        <h3>Item 4</h3>
+                        <p>Fourth matrix sector node. Completes the classic structural layout footprint.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 4.4.2 Technical Syntax Breakdown Reference Panel -->
-        <section class="card technical-breakdown">
-            <h2>4.4.2 Media Query Query Log</h2>
-            <p>Conditional execution syntax parsing applied to this sheet:</p>
-            <ul>
-                <li><strong>@media screen and (max-width: 768px)</strong> &mdash; Catches tablet thresholds by overriding widths to 50%.</li>
-                <li><strong>@media screen and (max-width: 480px)</strong> &mdash; Resets <code>float: none</code> and matches full 100% component footprints.</li>
-            </ul>
+        <!-- 4.6.2 Editorial Text Wrapping Component -->
+        <section id="article-section" class="lab-card">
+            <h2>4.6.2 Traditional Text Wrapping Around Floating Elements</h2>
+            
+            <div class="text-image-container clearfix">
+                <!-- Using an official placeholder graphic matching text specifications -->
+                <img src="https://images.unsplash.com/photo-1516116211223-5c359a36298a?w=400&auto=format&fit=crop&q=60" alt="Descriptive Workspace Context" class="float-left">
+                
+                <p><strong>Lorem ipsum dolor sit amet</strong>, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                
+                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+            </div>
         </section>
+
+        <!-- 4.6.4 Modular Testimonial Cluster -->
+        <section id="testimonials-section" class="lab-card">
+            <h2>4.6.4 Testimonial Feedback Matrix (3-Column Layout Block)</h2>
+            <p class="section-desc">Presents complex text assets distributed evenly into explicit horizontal row segments using exact 33.333% percentage fractions.</p>
+
+            <div class="testimonial-section clearfix">
+                <div class="testimonial">
+                    <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Real-time adaptations completely stream-lined our performance."</p>
+                    <h4>- John Doe, CEO of XYZ Corp</h4>
+                </div>
+                <div class="testimonial">
+                    <p>"Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. The transition was completely transparent."</p>
+                    <h4>- Jane Smith, Founder of ABC Ltd</h4>
+                </div>
+                <div class="testimonial">
+                    <p>"Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi. Clean structures, simple code layout."</p>
+                    <h4>- Mike Johnson, Freelancer</h4>
+                </div>
+            </div>
+        </section>
+
     </main>
 
 </body>

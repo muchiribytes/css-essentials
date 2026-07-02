@@ -28,5 +28,5 @@ A dedicated workspace for mastering CSS, tracking daily progression through core
 - [x] **Day 17:** Module 4: Introduction to CSS Layout Options & Basics of Floats
 - [x] **Day 18:** Module 4: Creating Multi-Column Layouts Using CSS Floats
 - [x] **Day 19:** Module 4: Media Queries *(Crucial for responsiveness!)*
-- [ ] **Day 20:** Module 4: Creating a Grid Layout Using Floats, Practical Examples with Floats, & Module 4 Completion
+- [x] **Day 20:** Module 4: Creating a Grid Layout Using Floats, Practical Examples with Floats, & Module 4 Completion
 - [ ] **Day 21:** Weekly Review & Catch-up Day

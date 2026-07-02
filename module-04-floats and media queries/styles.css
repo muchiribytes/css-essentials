@@ -1,137 +1,212 @@
 /* ==========================================================================
-   DAY 19 LOG: RESPONSIVE MEDIA QUERIES & BREAKPOINT MANAGEMENT
+   DAY 20 COMPLETE MANUAL: CORE FLOAT WRAPPING AND GRID LOGIC
    ========================================================================== */
 
+/* Structural Layout Defaults */
+* {
+  box-sizing: border-box;
+}
+
 body {
-  font-family: Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   line-height: 1.6;
-  background-color: #f4f7f6;
-  color: #2c3e50;
+  background-color: #f1f5f9;
+  color: #334155;
   margin: 0;
-  padding: 40px 20px;
-  display: flex;
-  justify-content: center;
+  padding: 0;
 }
 
-.responsive-wrapper {
-  max-width: 900px;
-  width: 100%;
+.lab-container {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 0 20px;
 }
 
-.lab-header {
+.module-header {
   text-align: center;
-  margin-bottom: 35px;
+  margin-bottom: 40px;
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
 }
 
-/* Breakpoint HUD Display Module */
-.breakpoint-hud {
-  display: inline-block;
-  margin-top: 15px;
-  padding: 8px 16px;
-  background-color: #2c3e50;
-  color: #ffffff;
-  border-radius: 20px;
-  font-size: 0.85rem;
-  font-weight: bold;
+.module-header h1 {
+  margin: 0 0 10px 0;
+  color: #1e293b;
 }
 
-/* Default state reveals desktop metrics */
-.breakpoint-hud .hud-tablet,
-.breakpoint-hud .hud-mobile { display: none; }
-.breakpoint-hud .hud-desktop { display: inline; }
+.module-header p {
+  margin: 0;
+  color: #64748b;
+}
 
-.card {
+.lab-card {
   background: #ffffff;
   padding: 30px;
   margin-bottom: 30px;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
 }
 
-.card h2 {
+.lab-card h2 {
   margin-top: 0;
-  border-bottom: 2px solid #ecf0f1;
-  padding-bottom: 10px;
-  font-size: 1.25rem;
-  color: #2c3e50;
+  color: #0f172a;
+  font-size: 1.35rem;
+  border-bottom: 2px solid #f1f5f9;
+  padding-bottom: 12px;
 }
 
-/* --------------------------------------------------------------------------
-   BASE DESKTOP LAYOUT CONFIGURATION (DEFAULT BASELINE)
-   -------------------------------------------------------------------------- */
-.container {
-  background-color: #f8fafc;
-  border: 1px dashed #cbd5e1;
-  border-radius: 6px;
-  padding: 10px;
+.section-desc {
+  color: #64748b;
+  font-size: 0.95rem;
+  margin-bottom: 20px;
 }
 
-/* Modern Micro Clearfix to encompass internal floated elements safely */
+/* Micro Clearfix Utility - Prevents parent height collapse */
 .clearfix::after {
   content: "";
   display: table;
   clear: both;
 }
 
-/* 4.4.4 Three-Column Core Target Configurations */
-.column {
-  float: left;
-  width: 33.33%;             /* Splits space evenly into thirds */
-  box-sizing: border-box;    /* Anchors padding boundaries inside the percentage wrapper */
+/* --------------------------------------------------------------------------
+   4.6.3 NAVIGATION BAR ARCHITECTURE WITH FLOATS
+   -------------------------------------------------------------------------- */
+.navbar {
+  background-color: #0284c7; /* Upgraded from lightblue for high contrast readability */
+  overflow: hidden;          /* Clears the internal floats of child li items */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.menu-item {
+  float: left;               /* Aligns links horizontally left-to-right */
+}
+
+.menu-item a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  padding: 16px 20px;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.menu-item a:hover {
+  background-color: #0369a1; /* Refined alternative to lightgrey */
+}
+
+/* --------------------------------------------------------------------------
+   4.5.2 CORE FLUID 2x2 GRID TECHNIQUE
+   -------------------------------------------------------------------------- */
+.container {
+  overflow: hidden;          /* Fulfills required layout float clearance */
+  background: #f8fafc;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.grid-item {
+  float: left;               /* Floats items out of line break streams */
+  width: 50%;                /* Exact splitting metric calculation */
+  box-sizing: border-box;    /* Explicit padding calculations bound containment */
   padding: 10px;
 }
 
-.column-inner {
-  padding: 20px;
+.item-inner {
+  padding: 25px;
+  border-radius: 8px;
   color: white;
-  border-radius: 6px;
-  min-height: 160px;
 }
 
-.box-red   { background-color: #e74c3c; }
-.box-blue  { background-color: #3498db; }
-.box-green { background-color: #2ecc71; }
+.shadow-1 { background-color: #3b82f6; }
+.shadow-2 { background-color: #10b981; }
+.shadow-3 { background-color: #f59e0b; }
+.shadow-4 { background-color: #8b5cf6; }
 
-.technical-breakdown ul {
-  padding-left: 20px;
-  margin-bottom: 0;
+.item-inner h3 { margin: 0 0 10px 0; }
+.item-inner p { margin: 0; font-size: 0.9rem; opacity: 0.9; }
+
+/* --------------------------------------------------------------------------
+   4.5.3 RESPONSIVE GRID MEDIA QUERY INTERPOLATION
+   -------------------------------------------------------------------------- */
+@media screen and (max-width: 600px) {
+  .grid-item {
+    width: 100%;             /* Rescinds side-by-side splitting widths completely */
+  }
 }
 
-.technical-breakdown li {
+/* --------------------------------------------------------------------------
+   4.6.2 TEXT WRAPPING ARCHITECTURE
+   -------------------------------------------------------------------------- */
+.float-left {
+  float: left;
+  margin-right: 20px;        /* Creates isolation gap between graphic and prose tags */
   margin-bottom: 10px;
+  border-radius: 6px;
+}
+
+.text-image-container img {
+  width: 200px;              /* Explicit fixed pixel layout scale boundary */
+  height: auto;              /* Locks dynamic aspect ratios safely */
+  object-fit: cover;
+}
+
+.text-image-container p {
+  text-align: justify;       /* Creates straight columns on structural layout alignments */
+  margin-top: 0;
+  color: #334155;
 }
 
 /* --------------------------------------------------------------------------
-   4.4.4 TABLET BREAKPOINT RESCALE OVERRIDE
+   4.6.4 TESTIMONIAL GRID MATRIX
    -------------------------------------------------------------------------- */
+.testimonial-section {
+  overflow: hidden;          /* Clears floated testimonial card wrappers */
+  margin: 0 -10px;           /* Compensates outer margins cleanly */
+}
+
+.testimonial {
+  float: left;
+  width: calc(33.333% - 20px); /* 3 modules calculated with custom spacing adjustments */
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  margin: 10px;              /* Explicit uniform horizontal isolate buffers */
+  border-radius: 8px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.testimonial p {
+  font-style: italic;
+  color: #475569;
+  margin-top: 0;
+}
+
+.testimonial h4 {
+  font-weight: 600;
+  text-align: right;
+  margin-top: 15px;
+  margin-bottom: 0;
+  color: #0f172a;
+  font-size: 0.85rem;
+}
+
+/* Tablet / Mobile Fallback for Testimonial Cards */
 @media screen and (max-width: 768px) {
-  /* Swap the HUD telemetry message indicators */
-  .breakpoint-hud .hud-desktop,
-  .breakpoint-hud .hud-mobile { display: none; }
-  .breakpoint-hud .hud-tablet { display: inline; }
-  
-  /* Shift columns from 3 per row into a 2-column wrapping distribution matrix */
-  .column {
-    width: 50%;
-  }
-}
-
-/* --------------------------------------------------------------------------
-   4.4.3 & 4.4.4 MOBILE BREAKPOINT STACKING RESET
-   -------------------------------------------------------------------------- */
-@media screen and (max-width: 480px) {
-  /* Swap the HUD telemetry message indicators */
-  .breakpoint-hud .hud-desktop,
-  .breakpoint-hud .hud-tablet { display: none; }
-  .breakpoint-hud .hud-mobile { display: inline; }
-  
-  /* Reset layout structure back into a natural vertical stack */
-  .column {
-    width: 100%;  /* Forces container wrapper to span edge-to-edge */
-    float: none;  /* Strips float metrics out of the browser flow engine entirely */
-  }
-  
-  .column-inner {
-    min-height: auto; /* Shrinks blocks dynamically on mobile displays */
+  .testimonial {
+    width: calc(100% - 20px); /* Shifts cards into full stacked row blocks */
   }
 }

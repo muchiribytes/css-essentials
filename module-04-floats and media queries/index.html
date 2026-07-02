@@ -3,60 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Day 18: Float Multi-Column &amp; Clearfix Lab</title>
+    <title>Day 19: Fluid Responsive Breakpoint Lab</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <main class="lab-wrapper">
+    <main class="responsive-wrapper">
         <header class="lab-header">
-            <h1>Day 18: Multi-Column Layouts &amp; Float Clearing</h1>
-            <p>Module 4: Structuring horizontal content grids and resolving structural container collapse.</p>
+            <h1>Day 19: Mastering CSS Media Queries</h1>
+            <p>Module 4: Implementing viewport condition filters to manipulate grid mechanics across target hardware configurations.</p>
+            
+            <!-- Dynamic State Indicator HUD -->
+            <div class="breakpoint-hud">
+                <span class="hud-desktop">🖥️ Mode: Desktop Width (>768px) &rarr; 3-Col Layout</span>
+                <span class="hud-tablet">📟 Mode: Tablet Breakpoint (&le;768px) &rarr; 2-Col Layout</span>
+                <span class="hud-mobile">📱 Mode: Mobile Breakpoint (&le;480px) &rarr; Stacked 1-Col Layout</span>
+            </div>
         </header>
 
+        <!-- 4.4.4 Stepwise Adaptive Grid Section -->
         <section class="card">
-            <h2>4.3.3 Equal-Width Grid (33.33% Columns)</h2>
-            <p>Three block elements floated left inside a parent container protected by a <code>clearfix</code> rule.</p>
+            <h2>4.4.4 Dynamic Adaptive Column Layout</h2>
+            <p>Resize your browser's window to watch the columns adapt using Media Query conditional statements.</p>
             
+            <!-- Clearfix container holds the floated column blocks -->
             <div class="container clearfix">
-                <div class="column-equal">Column 1</div>
-                <div class="column-equal">Column 2</div>
-                <div class="column-equal">Column 3</div>
+                <div class="column">
+                    <div class="column-inner box-red">
+                        <h3>Module Node A</h3>
+                        <p>Occupies 33.33% on desktop viewports, scaling down gracefully into lower target environments.</p>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="column-inner box-blue">
+                        <h3>Module Node B</h3>
+                        <p>Adapts to split a 50/50 block tracking partition matrix once shifted beneath tablet margins.</p>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="column-inner box-green">
+                        <h3>Module Node C</h3>
+                        <p>Drops entirely out of the horizontal float stream when squeezed onto tight mobile displays.</p>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <section class="card">
-            <h2>4.3.4 Asymmetric / Varying Width Grids</h2>
-            <p>Proportional grid columns mapping 50%, 30%, and 20% width distributions cleanly side by side.</p>
-            
-            <div class="container clearfix">
-                <div class="column large">Large Column (50%)</div>
-                <div class="column medium">Medium Column (30%)</div>
-                <div class="column small">Small Column (20%)</div>
-            </div>
-        </section>
-
-        <section class="card">
-            <h2>4.3.5 Visualizing the Collapsing Parent Problem</h2>
-            <p>The container border below shrinks to a flat line because it lacks a clearfix reset; it fails to acknowledge the height of its floated children.</p>
-            
-            <div class="container collapsing-container">
-                <div class="broken-column">Floated Child A</div>
-                <div class="broken-column">Floated Child B</div>
-            </div>
-            <div class="subsequent-text">
-                <strong>Subsequent Element:</strong> This text is pushed up and corrupted because the parent above collapsed!
-            </div>
-        </section>
-
-        <section class="card">
-            <h2>4.3.9 Resolving via Block Formatting Context (BFC)</h2>
-            <p>This layout uses <code>overflow: auto</code> on the parent to naturally recalculate bounding box containment zones without pseudo-elements.</p>
-            
-            <div class="container overflow-method-container">
-                <div class="broken-column alternate-color">Floated Child X</div>
-                <div class="broken-column alternate-color">Floated Child Y</div>
-            </div>
+        <!-- 4.4.2 Technical Syntax Breakdown Reference Panel -->
+        <section class="card technical-breakdown">
+            <h2>4.4.2 Media Query Query Log</h2>
+            <p>Conditional execution syntax parsing applied to this sheet:</p>
+            <ul>
+                <li><strong>@media screen and (max-width: 768px)</strong> &mdash; Catches tablet thresholds by overriding widths to 50%.</li>
+                <li><strong>@media screen and (max-width: 480px)</strong> &mdash; Resets <code>float: none</code> and matches full 100% component footprints.</li>
+            </ul>
         </section>
     </main>
 

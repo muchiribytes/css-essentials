@@ -25,3 +25,15 @@
     ```
   - **The Block Formatting Context (BFC) Hack:** Evaluated an alternative containment method using `overflow: auto` or `overflow: hidden` on the parent node. This instructs the browser layout engine to establish a new BFC, forcing the parent container to compute the structural height of its floated children without extra code.
 - **Key Takeaway:** When child elements are floated, their parent container structurally collapses because floats do not take up space in the normal vertical document flow. Applying a clearfix pattern or triggering a new Block Formatting Context (BFC) forces the parent to wrap around its floated content, preserving layout integrity.
+
+### 🗓 Day 19: July 2, 2026
+- **Topics:** Responsive Design & CSS Media Queries (`@media`)
+- **Log:** 
+  - **Conditional Compilation Rules:** Mastered responsive design fundamentals by using the `@media` at-rule directive to write conditional CSS engines based on viewport parameters.
+  - **Syntax Mechanics:** Analyzed media rule structures, including targeting concrete device types (`screen`), evaluating conditional logical expressions (`and`), and assigning hard boundary thresholds using physical feature values (`max-width: 600px`).
+  - **Mobile Stacking Patterns:** Engineered layout transformations that convert a fluid, horizontal two-column display (`width: 50%`) down into a safe mobile layout flow (`width: 100%`; `float: none;`) when viewport conditions match small screens.
+  - **Multi-Tier Breakpoint Matrices:** Constructed multi-stage responsive layout cascades by configuring targeted device breakpoints:
+    - **Default Canvas:** Wide monitors display symmetric three-column horizontal rows (`width: 33.33%`).
+    - **Tablet Breakpoint (`max-width: 768px`):** Drops layout footprint columns into a clean 2-column grid row matrix (`width: 50%`).
+    - **Mobile Breakpoint (`max-width: 480px`):** Re-collapses grid items entirely down into a singular stack flow (`width: 100%`; `float: none;`).
+- **Key Takeaway:** Media queries evaluate conditional expressions in real time. When combining multiple `max-width` feature queries, rules must be stacked intentionally from largest pixel value down to smallest to prevent larger viewport rules from matching first and overriding subsequent small-screen modifications.

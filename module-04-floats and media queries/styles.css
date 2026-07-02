@@ -1,11 +1,11 @@
 /* ==========================================================================
-   DAY 18 LOG: CREATING MULTI-COLUMN LAYOUTS USING CSS FLOATS
+   DAY 19 LOG: RESPONSIVE MEDIA QUERIES & BREAKPOINT MANAGEMENT
    ========================================================================== */
 
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
-  background-color: #f5f7fa;
+  background-color: #f4f7f6;
   color: #2c3e50;
   margin: 0;
   padding: 40px 20px;
@@ -13,8 +13,8 @@ body {
   justify-content: center;
 }
 
-.lab-wrapper {
-  max-width: 800px;
+.responsive-wrapper {
+  max-width: 900px;
   width: 100%;
 }
 
@@ -22,6 +22,23 @@ body {
   text-align: center;
   margin-bottom: 35px;
 }
+
+/* Breakpoint HUD Display Module */
+.breakpoint-hud {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 8px 16px;
+  background-color: #2c3e50;
+  color: #ffffff;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: bold;
+}
+
+/* Default state reveals desktop metrics */
+.breakpoint-hud .hud-tablet,
+.breakpoint-hud .hud-mobile { display: none; }
+.breakpoint-hud .hud-desktop { display: inline; }
 
 .card {
   background: #ffffff;
@@ -40,99 +57,81 @@ body {
 }
 
 /* --------------------------------------------------------------------------
-   4.3.2 & 4.3.3 EQUAL WIDTH LAYOUT CONFIGURATIONS
+   BASE DESKTOP LAYOUT CONFIGURATION (DEFAULT BASELINE)
    -------------------------------------------------------------------------- */
 .container {
   background-color: #f8fafc;
-  border: 2px dashed #cbd5e1;
+  border: 1px dashed #cbd5e1;
   border-radius: 6px;
   padding: 10px;
-  box-sizing: border-box;
 }
 
-.column-equal {
-  float: left; /* Pulls elements horizontally into an inline flow */
-  width: 33.33%; /* Divides viewport territory equally into thirds */
-  padding: 15px;
-  box-sizing: border-box; /* Crucial so padding stays inside the 33.33% width window */
-  background-color: #3498db;
-  color: white;
-  text-align: center;
-  font-weight: bold;
-  border: 1px solid #ffffff;
+/* Modern Micro Clearfix to encompass internal floated elements safely */
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
-/* --------------------------------------------------------------------------
-   4.3.4 VARYING WIDTHS COLUMN CONFIGURATIONS
-   -------------------------------------------------------------------------- */
+/* 4.4.4 Three-Column Core Target Configurations */
 .column {
   float: left;
-  padding: 15px;
-  box-sizing: border-box;
-  color: white;
-  font-weight: bold;
-  text-align: center;
-}
-
-.large {
-  width: 50%;
-  background-color: #9b59b6;
-}
-
-.medium {
-  width: 30%;
-  background-color: #e67e22;
-}
-
-.small {
-  width: 20%;
-  background-color: #1abc9c;
-}
-
-/* --------------------------------------------------------------------------
-   4.3.6 THE CLEARFIX pseudo-element technique
-   -------------------------------------------------------------------------- */
-.clearfix::after {
-  content: "";       /* Generates invisible content string layer */
-  display: table;    /* Formats structural block element processing */
-  clear: both;       /* Commands container to clear trailing layout line margins */
-}
-
-/* --------------------------------------------------------------------------
-   4.3.5 COLLAPSING PARENT ACCIDENT LAB (UNFINISHED FLOATS)
-   -------------------------------------------------------------------------- */
-.collapsing-container {
-  /* Intentional error: No clearfix applied to let you visualize container collapse */
-  background-color: #f1c40f; 
-  border-color: #e74c3c;
-}
-
-.broken-column {
-  float: left;
-  width: 50%;
-  padding: 20px;
-  background-color: #e74c3c;
-  color: white;
-  text-align: center;
-  box-sizing: border-box;
-  border: 1px solid #fff;
-}
-
-.subsequent-text {
-  margin-top: 15px;
-  background-color: #2c3e50;
-  color: #ffffff;
+  width: 33.33%;             /* Splits space evenly into thirds */
+  box-sizing: border-box;    /* Anchors padding boundaries inside the percentage wrapper */
   padding: 10px;
-  border-radius: 4px;
+}
+
+.column-inner {
+  padding: 20px;
+  color: white;
+  border-radius: 6px;
+  min-height: 160px;
+}
+
+.box-red   { background-color: #e74c3c; }
+.box-blue  { background-color: #3498db; }
+.box-green { background-color: #2ecc71; }
+
+.technical-breakdown ul {
+  padding-left: 20px;
+  margin-bottom: 0;
+}
+
+.technical-breakdown li {
+  margin-bottom: 10px;
 }
 
 /* --------------------------------------------------------------------------
-   4.3.9 OVERFLOW BFC MANAGEMENT METHOD
+   4.4.4 TABLET BREAKPOINT RESCALE OVERRIDE
    -------------------------------------------------------------------------- */
-.overflow-method-container {
-  overflow: auto; /* Triggers block formatting container context automatically */
+@media screen and (max-width: 768px) {
+  /* Swap the HUD telemetry message indicators */
+  .breakpoint-hud .hud-desktop,
+  .breakpoint-hud .hud-mobile { display: none; }
+  .breakpoint-hud .hud-tablet { display: inline; }
+  
+  /* Shift columns from 3 per row into a 2-column wrapping distribution matrix */
+  .column {
+    width: 50%;
+  }
 }
 
-.alternate-color {
-  background-color: #2ecc71;
+/* --------------------------------------------------------------------------
+   4.4.3 & 4.4.4 MOBILE BREAKPOINT STACKING RESET
+   -------------------------------------------------------------------------- */
+@media screen and (max-width: 480px) {
+  /* Swap the HUD telemetry message indicators */
+  .breakpoint-hud .hud-desktop,
+  .breakpoint-hud .hud-tablet { display: none; }
+  .breakpoint-hud .hud-mobile { display: inline; }
+  
+  /* Reset layout structure back into a natural vertical stack */
+  .column {
+    width: 100%;  /* Forces container wrapper to span edge-to-edge */
+    float: none;  /* Strips float metrics out of the browser flow engine entirely */
+  }
+  
+  .column-inner {
+    min-height: auto; /* Shrinks blocks dynamically on mobile displays */
+  }
 }
